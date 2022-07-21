@@ -19,72 +19,130 @@ from .statistics import Statistics
 class Anime(Node):
     def __init__(
         self,
-        id: int,
-        title: str,
-        main_picture: Picture,
-        alternative_titles: AlternativeTitles,
-        start_date: str,
-        end_date: str,
-        synopsis: str,
-        mean: float,
-        rank: int,
-        popularity: int,
-        num_list_users: int,
-        num_scoring_users: int,
-        nsfw: NsfwEnum,
-        genres: List[Genre],
-        created_at: str,
-        updated_at: str,
-        media_type: MediaTypeEnum,
-        status: StatusEnum,
-        num_episodes: int,
-        start_season: StartSeason,
-        broadcast: Broadcast,
-        source: SourceEnum,
-        average_episode_duration: int,
-        rating: RatingEnum,
-        studios: List[AnimeStudio],
-        pictures: Picture = None,
-        background: str = None,
-        related_anime: RelatedNode = None,
-        related_manga: RelatedNode = None,
-        recommendations: Recommendation = None,
-        statistics: Statistics = None
+        node: dict,
+        fields: List[str]
     ) -> None:
         """ Constructor.
 
         Parameters
         -----------
-        # TODO
+        node: :class:`dict`
+            The JSON object anime.
+        fields: :class:`List[str]`
+            The fields used for the request.
         """
 
-        super().__init__(id, title, main_picture)
+        super().__init__(
+            id           = node["id"], 
+            title        = node["title"], 
+            main_picture = node["main_picture"]
+        )
 
-        self.alternative_titles       = alternative_titles
-        self.start_date               = start_date
-        self.end_date                 = end_date
-        self.synopsis                 = synopsis
-        self.mean                     = mean
-        self.rank                     = rank
-        self.popularity               = popularity
-        self.num_list_users           = num_list_users
-        self.num_scoring_users        = num_scoring_users
-        self.nsfw                     = nsfw
-        self.genres                   = genres
-        self.created_at               = created_at
-        self.updated_at               = updated_at
-        self.media_type               = media_type
-        self.status                   = status
-        self.num_episodes             = num_episodes
-        self.start_season             = start_season
-        self.broadcast                = broadcast
-        self.source                   = source
-        self.average_episode_duration = average_episode_duration
-        self.rating                   = rating
-        self.studios                  = studios
-        self.pictures                 = pictures # Cannot contain this field in a list.
-        self.background               = background # Cannot contain this field in a list.
-        self.related_anime            = related_anime # Cannot contain this field in a list.
-        self.related_manga            = related_manga # Cannot contain this field in a list.
-        self.recommendations          = recommendations # Cannot contain this field in a list.
-        self.statistics               = statistics # Cannot contain this field in a list.
+        self.alternative_titles       = None
+        self.start_date               = None
+        self.end_date                 = None
+        self.synopsis                 = None
+        self.mean                     = None
+        self.rank                     = None
+        self.popularity               = None
+        self.num_list_users           = None
+        self.num_scoring_users        = None
+        self.nsfw                     = None
+        self.genres                   = None
+        self.created_at               = None
+        self.updated_at               = None
+        self.media_type               = None
+        self.status                   = None
+        self.num_episodes             = None
+        self.start_season             = None
+        self.broadcast                = None
+        self.source                   = None
+        self.average_episode_duration = None
+        self.rating                   = None
+        self.studios                  = None
+        self.pictures                 = None # Cannot contain this field in a list.
+        self.background               = None # Cannot contain this field in a list.
+        self.related_anime            = None # Cannot contain this field in a list.
+        self.related_manga            = None # Cannot contain this field in a list.
+        self.recommendations          = None # Cannot contain this field in a list.
+        self.statistics               = None # Cannot contain this field in a list.
+
+        self.setFields(node=node, fields=fields)
+
+    def setFields(self, node: dict, fields: List[str]) -> None:
+        # TODO: Documentation of the method
+
+        for field in fields:
+            match field:
+                case "alternative_titles":
+                    alternative_titles: dict = node["alternative_titles"]
+
+                    synonyms: List[str] = alternative_titles["synonyms"]
+                    english: str        = alternative_titles["en"]
+                    japanese: str       = alternative_titles["ja"]
+
+                    self.alternative_titles = AlternativeTitles(
+                        synonyms = synonyms,
+                        english  = english,
+                        japanese = japanese
+                    )
+
+                    pass
+                case "start_date":
+                    self.start_date: str = node["start_date"]
+
+                    pass
+                case "end_date":
+                    self.end_date: str = node["end_date"]
+
+                    pass
+                case "synopsis":
+                    self.synopsis: str = node["synopsis"]
+
+                    pass
+                case "mean":
+                    pass
+                case "rank":
+                    pass
+                case "popularity":
+                    pass
+                case "num_list_users":
+                    pass
+                case "num_scoring_users":
+                    pass
+                case "nsfw":
+                    pass
+                case "genres":
+                    pass
+                case "created_at":
+                    pass
+                case "updated_at":
+                    pass
+                case "media_type":
+                    pass
+                case "status":
+                    pass
+                case "num_episodes":
+                    pass
+                case "start_season":
+                    pass
+                case "broadcast":
+                    pass
+                case "source":
+                    pass
+                case "average_episode_duration":
+                    pass
+                case "rating":
+                    pass
+                case "studios":
+                    pass
+                case "pictures":
+                    pass
+                case "background":
+                    pass
+                case "related_anime":
+                    pass
+                case "recommendations":
+                    pass
+                case "statistics":
+                    pass
