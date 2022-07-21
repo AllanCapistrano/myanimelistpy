@@ -1,6 +1,6 @@
 from .enums.seasonEnum import SeasonEnum
 
-class StartSeason:
+class Season:
     def __init__(self, year: int, season: SeasonEnum) -> None:
         """ Constructor.
         
