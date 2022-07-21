@@ -1,5 +1,5 @@
 from .picture import Picture
-from .enums.relationTypeEnum import RelationType
+from .enums.relationTypeEnum import RelationTypeEnum
 
 class Node:
     def __init__(self, 

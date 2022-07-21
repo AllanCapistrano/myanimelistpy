@@ -1,16 +1,16 @@
 from typing import List
 
 from .node import Node
-from .enums.nsfwEnum import Nsfw
+from .enums.nsfwEnum import NsfwEnum
 from .picture import Picture
 from .alternativeTitles import AlternativeTitles
 from .genre import Genre
-from .enums.mediaTypeEnum import MediaType
-from .enums.statusEnum import Status
+from .enums.mediaTypeEnum import MediaTypeEnum
+from .enums.statusEnum import StatusEnum
 from .startSeason import StartSeason
 from .broadcast import Broadcast
-from .enums.sourceEnum import Source
-from .enums.ratingEnum import Rating
+from .enums.sourceEnum import SourceEnum
+from .enums.ratingEnum import RatingEnum
 from .animeStudio import AnimeStudio
 from .relatedNode import RelatedNode
 from .recommendation import Recommendation
@@ -31,18 +31,18 @@ class Anime(Node):
         popularity: int,
         num_list_users: int,
         num_scoring_users: int,
-        nsfw: Nsfw,
+        nsfw: NsfwEnum,
         genres: List[Genre],
         created_at: str,
         updated_at: str,
-        media_type: MediaType,
-        status: Status,
+        media_type: MediaTypeEnum,
+        status: StatusEnum,
         num_episodes: int,
         start_season: StartSeason,
         broadcast: Broadcast,
-        source: Source,
+        source: SourceEnum,
         average_episode_duration: int,
-        rating: Rating,
+        rating: RatingEnum,
         studios: List[AnimeStudio],
         pictures: Picture = None,
         background: str = None,

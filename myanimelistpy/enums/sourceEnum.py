@@ -1,6 +1,6 @@
 from enum import Enum
 
-class Source(Enum):
+class SourceEnum(Enum):
     other           = 1
     original        = 2
     manga           = 3

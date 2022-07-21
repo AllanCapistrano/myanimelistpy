@@ -1,6 +1,6 @@
 from enum import Enum
 
-class Fields(Enum):
+class FieldsEnum(Enum):
     id                       = 0
     title                    = 1
     main_picture             = 2

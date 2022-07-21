@@ -19,7 +19,7 @@ class Recommendation(Node):
             Title of the anime.
         main_picture: :class:`Picture`
             Main picture of the anime.
-        num_recommendations: :class:`RelationType`
+        num_recommendations: :class:`RelationTypeEnum`
             Number of recommendations of the anime.
         """
 

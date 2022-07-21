@@ -1,6 +1,6 @@
 from enum import Enum
 
-class RelationType(Enum):
+class RelationTypeEnum(Enum):
     sequel              = "Sequel"
     prequel             = "Prequel"
     alternative_setting = "Alternative Setting"

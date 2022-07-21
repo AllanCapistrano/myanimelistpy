@@ -1,6 +1,6 @@
 from enum import Enum
 
-class MediaType(Enum):
+class MediaTypeEnum(Enum):
     unknown = 0
     tv      = 2
     ova     = 3

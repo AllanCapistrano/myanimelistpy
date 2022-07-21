@@ -1,6 +1,6 @@
 from enum import Enum
 
-class Rating(Enum):
+class RatingEnum(Enum):
     g      = "G - All Ages"
     pg     = "PG - Children"
     pg_13  = "pg_13 - Teens 13 and Older"

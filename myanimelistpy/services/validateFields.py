@@ -1,6 +1,6 @@
 from typing import List
 
-from ..enums.fieldsEnum import Fields
+from ..enums.fieldsEnum import FieldsEnum
 
 def validateFields(fields: List[str]) -> bool:
     """ Validate the fields provided.
@@ -8,7 +8,7 @@ def validateFields(fields: List[str]) -> bool:
     Parameters
     -----------
     fields: :class:`list`
-        Fields list.
+        FieldsEnum list.
 
     Returns
     -----------
@@ -18,8 +18,8 @@ def validateFields(fields: List[str]) -> bool:
     for field in fields:
         flag = False
 
-        for index in range(len(Fields)):
-            if(field == Fields(index).name):
+        for index in range(len(FieldsEnum)):
+            if(field == FieldsEnum(index).name):
                 flag = True
 
         if(not flag):

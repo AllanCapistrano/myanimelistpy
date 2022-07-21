@@ -1,14 +1,14 @@
-from .enums.seasonEnum import Season
+from .enums.seasonEnum import SeasonEnum
 
 class StartSeason:
-    def __init__(self, year: int, season: Season) -> None:
+    def __init__(self, year: int, season: SeasonEnum) -> None:
         """ Constructor.
         
         Parameters
         -----------
         year: :class:`int`
             Anime release year.
-        season: :class:`Season`
+        season: :class:`SeasonEnum`
             Anime release season.
         """
         

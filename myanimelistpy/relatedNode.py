@@ -1,6 +1,6 @@
 from .node import Node
 from .picture import Picture
-from .enums.relationTypeEnum import RelationType
+from .enums.relationTypeEnum import RelationTypeEnum
 
 class RelatedNode(Node):
     def __init__(
@@ -8,7 +8,7 @@ class RelatedNode(Node):
         id: int,
         title: str,
         main_picture: Picture,
-        relation_type: RelationType
+        relation_type: RelationTypeEnum
     ) -> None:
         """ Constructor.
 
@@ -20,7 +20,7 @@ class RelatedNode(Node):
             Title of the anime or manga.
         main_picture: :class:`Picture`
             Main picture of the anime or manga.
-        relation_type: :class:`RelationType`
+        relation_type: :class:`RelationTypeEnum`
             Relation type of the anime or manga.
         """
 
