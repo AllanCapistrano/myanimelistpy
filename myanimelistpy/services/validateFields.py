@@ -1,5 +1,4 @@
-from dataclasses import Field
-from enums.fields import Fields
+from ..enums.fields import Fields
 
 def validateFields(fields: list) -> bool:
     """ Validate the fields provided.
