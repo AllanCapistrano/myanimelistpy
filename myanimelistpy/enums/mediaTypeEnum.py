@@ -2,9 +2,9 @@ from enum import Enum
 
 class MediaTypeEnum(Enum):
     unknown = 0
-    tv      = 2
-    ova     = 3
-    movie   = 4
-    special = 5
-    ona     = 6
-    music   = 7
+    tv      = 1
+    ova     = 2
+    movie   = 3
+    special = 4
+    ona     = 5
+    music   = 6
