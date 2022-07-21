@@ -1,7 +1,9 @@
 import requests
 from typing import List
+import json
 
 from .services.validateFields import validateFields
+from .anime import Anime
 
 # ------------------------------ Constants ----------------------------------- #
 BASE_URL            = "https://api.myanimelist.net/v2"
@@ -10,8 +12,6 @@ AUTH_HEADER         = "X-MAL-CLIENT-ID"
 # ---------------------------------------------------------------------------- #
 
 class MyAnimeList:
-    
-    
     def __init__(self, client_id: str) -> None:
         """ Constructor.
 
@@ -30,7 +30,9 @@ class MyAnimeList:
         limit: int = 100, 
         offset: int = 0,
         fields: List[str] = []
-    ):
+    ) -> List[Anime]:
+        # TODO: Documentation of the method
+
         validateFields(fields=fields)
         
         url = f"{BASE_URL}/{ANIME_LIST_ENDPOINT}?q={anime_name}&limit={limit}&offset={offset}"
@@ -39,12 +41,16 @@ class MyAnimeList:
             url += f"&fields={fields}"
 
         response = requests.get(
-            url=url,
-            headers={AUTH_HEADER: self.client_id}
+            url     = url,
+            headers = {AUTH_HEADER: self.client_id}
         )
 
-        # json = loads(response.json())
+        responseJson: dict  = response.json()
+        animes: List[Anime] = []
 
-        # print(response.json()["data"][0]["node"]["id"])
+        for index in range(len(responseJson["data"])):
+            animes.append(
+                Anime(node=responseJson["data"][index]["node"], fields=fields)
+            )
 
-        return response.json()
+        return animes
