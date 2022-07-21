@@ -1,6 +1,6 @@
 from typing import List
 
-from ..enums.fields import Fields
+from ..enums.fieldsEnum import Fields
 
 def validateFields(fields: List[str]) -> bool:
     """ Validate the fields provided.
