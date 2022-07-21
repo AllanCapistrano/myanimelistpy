@@ -30,10 +30,22 @@ class MyAnimeList:
         offset: int = 0,
         fields: List[str] = []
     ) -> List[Anime]:
-        # TODO: Documentation of the method
+        """ Returns a list of the anime by the name.
+
+        Parameters
+        -----------
+        anime_name: :class:`str`
+            Name of the anime/series.
+        limit: :class:`int`
+            The maximum size of the list.
+        offset: :class:`offset`
+            The list offset.
+        fields: :class:`fields`
+            List of fields used to show more information about the anime.
+        """
 
         validateFields(fields=fields)
-        
+
         url = f"{BASE_URL}/{ANIME_LIST_ENDPOINT}?q={anime_name}&limit={limit}&offset={offset}"
 
         if(len(fields) > 0):
