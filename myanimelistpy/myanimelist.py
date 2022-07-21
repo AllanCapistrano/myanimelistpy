@@ -1,6 +1,5 @@
 import requests
 from typing import List
-import json
 
 from .services.validateFields import validateFields
 from .anime import Anime
