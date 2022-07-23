@@ -43,6 +43,10 @@ class MyAnimeList:
         fields: :class:`fields`
             List of fields used to show more information about the anime. If is 
             empty, the default fields are `id`, `title` and `main_picture`.
+
+        Returns
+        -----------
+        animes: :class:`List[Anime]`
         """
 
         validateFields(fields=fields)
