@@ -11,5 +11,25 @@ class Picture:
             The URI of an anime's medium picture.
         """
 
-        self.large  = large
-        self.medium = medium 
+        self.__large  = large
+        self.__medium = medium 
+
+    def getLarge(self) -> str:
+        """ Large size picture.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__large
+
+    def getMedium(self) -> str:
+        """ Medium size picture.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__medium

@@ -37,11 +37,12 @@ class MyAnimeList:
         anime_name: :class:`str`
             Name of the anime/series.
         limit: :class:`int`
-            The maximum size of the list.
+            The maximum size of the list. `The default value is 100`.
         offset: :class:`offset`
-            The list offset.
+            The list offset. `The default value is 0`.
         fields: :class:`fields`
-            List of fields used to show more information about the anime.
+            List of fields used to show more information about the anime. If is 
+            empty, the default fields are `id`, `title` and `main_picture`.
         """
 
         validateFields(fields=fields)

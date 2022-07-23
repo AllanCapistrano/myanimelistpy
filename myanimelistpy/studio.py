@@ -1,21 +1,21 @@
 
-class Genre:
+class Studio:
     def __init__(self, id: int, name: str) -> None:
         """ Constructor
 
         Parameters
         -----------
         id: :class:`int`
-            ID of the genre.
+            ID of the Anime Studio.
         name: :class:`str`
-            Name of the genre.
+            Name of the Anime Studio.
         """
 
         self.__id   = id
         self.__name = name
 
     def getId(self) -> int:
-        """ Genre ID.
+        """ Studio ID.
 
         Returns
         -----------
@@ -25,7 +25,7 @@ class Genre:
         return self.__id
 
     def getName(self) -> str:
-        """ Genre name.
+        """ Studio name.
 
         Returns
         -----------

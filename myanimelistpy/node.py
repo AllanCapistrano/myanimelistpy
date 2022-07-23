@@ -19,6 +19,36 @@ class Node:
             Main picture of the anime or manga.
         """
 
-        self.id           = id
-        self.title        = title
-        self.main_picture = main_picture
+        self.__id           = id
+        self.__title        = title
+        self.__main_picture = main_picture
+
+    def getId(self) -> int:
+        """ Anime or manga ID.
+
+        Returns
+        -----------
+        :class:`int`
+        """
+        
+        return self.__id
+
+    def getTitle(self) -> str:
+        """ Anime or manga ID.
+
+        Returns
+        -----------
+        :class:`int`
+        """
+        
+        return self.__title
+
+    def getMainPicture(self) -> Picture:
+        """ Anime or manga main picture.
+
+        Returns
+        -----------
+        :class:`int`
+        """
+        
+        return self.__main_picture

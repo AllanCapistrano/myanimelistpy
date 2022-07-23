@@ -1,9 +1,4 @@
 from typing import List
-from myanimelistpy.enums.dayWeekEnum import DayWeekEnum
-from myanimelistpy.enums.relationTypeEnum import RelationTypeEnum
-
-from myanimelistpy.enums.seasonEnum import SeasonEnum
-from myanimelistpy.status import Status
 
 from .node import Node
 from .enums.nsfwEnum import NsfwEnum
@@ -16,10 +11,14 @@ from .season import Season
 from .broadcast import Broadcast
 from .enums.sourceEnum import SourceEnum
 from .enums.ratingEnum import RatingEnum
-from .animeStudio import AnimeStudio
+from .studio import Studio
 from .relatedNode import RelatedNode
 from .recommendation import Recommendation
 from .statistics import Statistics
+from .enums.dayWeekEnum import DayWeekEnum
+from .enums.relationTypeEnum import RelationTypeEnum
+from .enums.seasonEnum import SeasonEnum
+from .statisticsStatus import StatisticsStatus
 
 class Anime(Node):
     def __init__(
@@ -43,38 +42,38 @@ class Anime(Node):
             main_picture = node["main_picture"]
         )
 
-        self.alternative_titles       = None
-        self.start_date               = None
-        self.end_date                 = None
-        self.synopsis                 = None
-        self.mean                     = None
-        self.rank                     = None
-        self.popularity               = None
-        self.num_list_users           = None
-        self.num_scoring_users        = None
-        self.nsfw                     = None
-        self.genres                   = None
-        self.created_at               = None
-        self.updated_at               = None
-        self.media_type               = None
-        self.status                   = None
-        self.num_episodes             = None
-        self.start_season             = None
-        self.broadcast                = None
-        self.source                   = None
-        self.average_episode_duration = None
-        self.rating                   = None
-        self.studios                  = None
-        self.pictures                 = None # Cannot contain this field in a list.
-        self.background               = None # Cannot contain this field in a list.
-        self.related_anime            = None # Cannot contain this field in a list.
-        self.related_manga            = None # Cannot contain this field in a list.
-        self.recommendations          = None # Cannot contain this field in a list.
-        self.statistics               = None # Cannot contain this field in a list.
+        self.__alternative_titles       = None
+        self.__start_date               = None
+        self.__end_date                 = None
+        self.__synopsis                 = None
+        self.__mean                     = None
+        self.__rank                     = None
+        self.__popularity               = None
+        self.__num_list_users           = None
+        self.__num_scoring_users        = None
+        self.__nsfw                     = None
+        self.__genres                   = None
+        self.__created_at               = None
+        self.__updated_at               = None
+        self.__media_type               = None
+        self.__status                   = None
+        self.__num_episodes             = None
+        self.__start_season             = None
+        self.__broadcast                = None
+        self.__source                   = None
+        self.__average_episode_duration = None
+        self.__rating                   = None
+        self.__studios                  = None
+        self.__pictures                 = None # Cannot contain this field in a list.
+        self.__background               = None # Cannot contain this field in a list.
+        self.__related_anime            = None # Cannot contain this field in a list.
+        self.__related_manga            = None # Cannot contain this field in a list.
+        self.__recommendations          = None # Cannot contain this field in a list.
+        self.__statistics               = None # Cannot contain this field in a list.
 
-        self.setFields(node=node, fields=fields)
+        self.__setFields(node=node, fields=fields)
 
-    def setFields(self, node: dict, fields: List[str]) -> None:
+    def __setFields(self, node: dict, fields: List[str]) -> None:
         """ Set the class attributes values using the fields.
 
         Parameters
@@ -94,7 +93,7 @@ class Anime(Node):
                     english: str        = alternative_titles["en"]
                     japanese: str       = alternative_titles["ja"]
 
-                    self.alternative_titles = AlternativeTitles(
+                    self.__alternative_titles = AlternativeTitles(
                         synonyms = synonyms,
                         english  = english,
                         japanese = japanese
@@ -102,41 +101,41 @@ class Anime(Node):
 
                     pass
                 case "start_date":
-                    self.start_date: str = node["start_date"]
+                    self.__start_date: str = node["start_date"]
 
                     pass
                 case "end_date":
-                    self.end_date: str = node["end_date"]
+                    self.__end_date: str = node["end_date"]
 
                     pass
                 case "synopsis":
-                    self.synopsis: str = node["synopsis"]
+                    self.__synopsis: str = node["synopsis"]
 
                     pass
                 case "mean":
-                    self.mean: float = node["mean"]
+                    self.__mean: float = node["mean"]
 
                     pass
                 case "rank":
-                    self.rank: int = node["rank"]
+                    self.__rank: int = node["rank"]
 
                     pass
                 case "popularity":
-                    self.popularity: int = node["popularity"]
+                    self.__popularity: int = node["popularity"]
 
                     pass
                 case "num_list_users":
-                    self.num_list_users: int = node["num_list_users"]
+                    self.__num_list_users: int = node["num_list_users"]
 
                     pass
                 case "num_scoring_users":
-                    self.num_scoring_users: int = node["num_scoring_users"]
+                    self.__num_scoring_users: int = node["num_scoring_users"]
 
                     pass
                 case "nsfw":
                     nsfw_type: str = node["nsfw"]
 
-                    self.nsfw: NsfwEnum = NsfwEnum[nsfw_type]
+                    self.__nsfw: NsfwEnum = NsfwEnum[nsfw_type]
 
                     pass
                 case "genres":
@@ -146,36 +145,36 @@ class Anime(Node):
                     for genre in genres_json:
                         genres.append(Genre(id=genre["id"], name=genre["name"]))
 
-                    self.genres: List[Genre] = genres
+                    self.__genres: List[Genre] = genres
 
                     pass
                 case "created_at":
-                    self.created_at: str = node["created_at"]
+                    self.__created_at: str = node["created_at"]
 
                     pass
                 case "updated_at":
-                    self.updated_at: str = node["updated_at"]
+                    self.__updated_at: str = node["updated_at"]
 
                     pass
                 case "media_type":
-                    self.media_type: MediaTypeEnum = node["media_type"]
+                    self.__media_type: MediaTypeEnum = node["media_type"]
 
                     pass
                 case "status":
                     status_type: str = node["status"]
 
-                    self.status: StatusEnum = StatusEnum[status_type]
+                    self.__status: StatusEnum = StatusEnum[status_type].value
 
                     pass
                 case "num_episodes":
-                    self.num_episodes: int = node["num_episodes"]
+                    self.__num_episodes: int = node["num_episodes"]
 
                     pass
                 case "start_season":
                     start_season: dict = node["start_season"]
                     season_type: str   = start_season["season"]
 
-                    self.start_season: Season = Season(
+                    self.__start_season: Season = Season(
                         year   = start_season["year"],
                         season = SeasonEnum[season_type]
                     )
@@ -186,22 +185,22 @@ class Anime(Node):
                         broadcast: dict    = node["broadcast"]
                         day_week_type: str = broadcast["day_of_the_week"]
                     
-                        self.broadcast: Broadcast = Broadcast(
+                        self.__broadcast: Broadcast = Broadcast(
                             day_of_the_week = DayWeekEnum[day_week_type],
                             start_time      = broadcast["start_time"]
                         )
                     except:
-                        self.broadcast = None
+                        self.__broadcast = None
 
                     pass
                 case "source":
                     source_type: str = node["source"]
 
-                    self.source: SourceEnum = SourceEnum[source_type]
+                    self.__source: SourceEnum = SourceEnum[source_type]
 
                     pass
                 case "average_episode_duration":
-                    self.average_episode_duration: int = node[
+                    self.__average_episode_duration: int = node[
                         "average_episode_duration"
                     ]
 
@@ -209,22 +208,22 @@ class Anime(Node):
                 case "rating":
                     rating_type: str = "r_plus" if node["rating"] == "r+" else node["rating"]
 
-                    self.rating: RatingEnum = RatingEnum[rating_type]
+                    self.__rating: RatingEnum = RatingEnum[rating_type]
 
                     pass
                 case "studios":
                     studios_json: List[dict]   = node["studios"]
-                    studios: List[AnimeStudio] = []
+                    studios: List[Studio] = []
 
                     for studio in studios_json:
                         studios.append(
-                            AnimeStudio(
+                            Studio(
                                 id   = studio["id"], 
                                 name = studio["name"]
                             )
                         )
 
-                    self.studios: List[AnimeStudio] = studios
+                    self.__studios: List[Studio] = studios
 
                     pass
                 case "pictures":
@@ -240,16 +239,16 @@ class Anime(Node):
                                 )
                             )
 
-                        self.pictures: Picture = pictures
+                        self.__pictures: List[Picture] = pictures
                     except:
-                        self.pictures = None
+                        self.__pictures = None
 
                     pass
                 case "background":
                     try:
-                        self.background: str = node["background"]
+                        self.__background: str = node["background"]
                     except:
-                        self.background = None
+                        self.__background = None
 
                     pass
                 case "related_anime":
@@ -276,9 +275,9 @@ class Anime(Node):
                                 )
                             )
                         
-                        self.related_anime: List[RelatedNode] = related_animes
+                        self.__related_anime: List[RelatedNode] = related_animes
                     except:
-                        self.related_anime = None
+                        self.__related_anime = None
 
                     pass
                 case "related_manga":
@@ -305,9 +304,9 @@ class Anime(Node):
                                 )
                             )
 
-                        self.related_manga: List[RelatedNode] = related_mangas
+                        self.__related_manga: List[RelatedNode] = related_mangas
                     except:
-                        self.related_manga = None
+                        self.__related_manga = None
 
                     pass
                 case "recommendations":
@@ -335,7 +334,7 @@ class Anime(Node):
                                 )
                             )
                     except:
-                        self.recommendations = None
+                        self.__recommendations = None
 
                     pass
                 case "statistics":
@@ -343,8 +342,8 @@ class Anime(Node):
                         statistics: dict = node["statistics"]
                         status: dict     = statistics["status"]
 
-                        self.statistics: Statistics = Statistics(
-                            status = Status(
+                        self.__statistics: Statistics = Statistics(
+                            status = StatisticsStatus(
                                 watching      = status["watching"],
                                 completed     = status["completed"],
                                 on_hold       = status["on_hold"],
@@ -354,6 +353,298 @@ class Anime(Node):
                             num_list_users = statistics["num_list_users"]
                         )
                     except:
-                        self.statistics = None
+                        self.__statistics = None
 
                     pass
+
+    def getAlternativeTitle(self) -> AlternativeTitles:
+        """ The alternative title of the anime.
+
+        Returns
+        -----------
+        :class:`AlternativeTitles`
+        """
+
+        return self.__alternative_titles
+
+    def getStartDate(self) -> str:
+        """ The anime start date. Format `YYYY-mm-dd`.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__start_date
+
+    def getEndDate(self) -> str:
+        """ The anime end date. Format `YYYY-mm-dd`.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+        
+        return self.__end_date
+
+    def getSynopsis(self) -> str:
+        """ Anime synopsis.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+        
+        return self.__synopsis
+
+    def getMean(self) -> float:
+        """ Mean score.
+
+        Returns
+        -----------
+        :class:`float`
+        """
+        
+        return self.__mean
+
+    def getRank(self) -> int:
+        """ Anime rank.
+
+        Returns
+        -----------
+        :class:`int`
+        """
+        
+        return self.__rank
+
+    def getPopularity(self) -> int:
+        """ Anime popularity.
+
+        Returns
+        -----------
+        :class:`int`
+        """
+
+        return self.__popularity
+
+    def getNumUserList(self) -> int:
+        """ The number of users who have the anime in their list.
+
+        Returns
+        -----------
+        :class:`int`
+        """
+
+        return self.__num_list_users
+
+    def getNumScoringUsers(self) -> int:
+        """ The number of users who rated the anime.
+
+        Returns
+        -----------
+        :class:`int`
+        """
+        
+        return self.__num_scoring_users
+
+    def getNsfwClassification(self) -> str:
+        """ Anime NSFW Classification
+
+        Returns
+        -----------
+        :class:`NsfwEnum`
+        """
+
+        return self.__nsfw.value
+
+    def getGenres(self) -> List[Genre]:
+        """ The list of anime genres.
+
+        Returns
+        -----------
+        :class:`List[Genre]`
+        """
+
+        return self.__genres
+
+    def getCreatedAt(self) -> str:
+        """ Timestamp of anime creation in MyAnimeList database.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__created_at
+
+    def getUpdatedAt(self) -> str:
+        """ Timestamp of anime update in MyAnimeList database.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__updated_at
+
+    def getMediaType(self) -> str:
+        """ Anime media type.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__media_type
+
+    def getStatus(self) -> str:
+        """ Airing status.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__status
+
+    def getNumEpisodes(self) -> int:
+        """ The total number of episodes of this series. If unknown, it is 0.
+
+        Returns
+        -----------
+        :class:`int`
+        """
+
+        return self.__num_episodes
+
+    def getStartSeason(self) -> Season:
+        """ Anime start season.
+
+        Returns
+        -----------
+        :class:`Season`
+        """
+
+        return self.__start_season
+
+    def getBroadcast(self) -> Broadcast | None:
+        """ Broadcast day of the week and start time (JST).
+
+        Returns
+        -----------
+        :class:`Broadcast | None`
+        """
+
+        return self.__broadcast
+
+    def getSource(self) -> str:
+        """ Original work.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__source.value
+
+    def getAvgEpisodeDurationInSeconds(self) -> int:
+        """ Average length of episode in seconds.
+
+        Returns
+        -----------
+        :class:`int`
+        """
+
+        return self.__average_episode_duration
+
+    def getRating(self) -> str:
+        """ Anime rating.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__rating.value
+
+    def getStudios(self) -> List[Studio]:
+        """ List of studios that produced the anime.
+
+        Returns
+        -----------
+        :class:`List[Studio]`
+        """
+
+        return self.__studios
+
+    def getPictures(self) -> List[Picture] | None:
+        """ List of anime pictures.
+
+        You cannot contain this field in a list.
+        
+        Returns
+        -----------
+        :class:`List[Picture] | None`
+        """
+
+        return self.__pictures
+
+    def getBackground(self) -> str | None:
+        """ The API strips BBCode tags from the result.
+        
+        You cannot contain this field in a list.
+        
+        Returns
+        -----------
+        :class:`str | None`
+        """
+
+        return self.__background
+
+    def getRelatedAnimes(self) -> List[RelatedNode] | None:
+        """ List of related animes.
+        
+        You cannot contain this field in a list.
+        
+        Returns
+        -----------
+        :class:`List[RelatedNode] | None`
+        """
+
+        return self.__related_anime
+
+    def getRelatedMangas(self) -> List[RelatedNode] | None:
+        """ List of related mangas.
+        
+        You cannot contain this field in a list.
+        
+        Returns
+        -----------
+        :class:`List[RelatedNode] | None`
+        """
+
+        return self.__related_manga
+
+    def getRecommendations(self) -> List[Recommendation] | None:
+        """ Summary of recommended anime for those who like this anime.
+        
+        You cannot contain this field in a list.
+        
+        Returns
+        -----------
+        :class:`List[Recommendation] | None`
+        """
+
+        return self.__recommendations
+
+    def getStatistics(self) -> Statistics | None:
+        """ Anime statistics on MyAnimeList.
+        
+        You cannot contain this field in a list.
+        
+        Returns
+        -----------
+        :class:`Statistics | None`
+        """
+
+        return self.__statistics

@@ -26,4 +26,14 @@ class RelatedNode(Node):
 
         super().__init__(id, title, main_picture)
         
-        self.relation_type = relation_type
+        self.__relation_type = relation_type
+
+    def getRelationType(self) -> str:
+        """ Anime or manga relation type.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__relation_type.value

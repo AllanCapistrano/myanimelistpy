@@ -25,4 +25,14 @@ class Recommendation(Node):
 
         super().__init__(id, title, main_picture)
 
-        self.num_recommendations = num_recommendations
+        self.__num_recommendations = num_recommendations
+
+    def getNumRecommendations(self) -> int:
+        """ Number of recommendations.
+
+        Returns
+        -----------
+        :class:`int`
+        """
+
+        return self.__num_recommendations

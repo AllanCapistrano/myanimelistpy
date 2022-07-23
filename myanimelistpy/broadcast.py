@@ -12,5 +12,25 @@ class Broadcast:
             Time in hours format that is broadcasted.
         """
         
-        self.day_of_the_week = day_of_the_week
-        self.start_time = start_time
+        self.__day_of_the_week = day_of_the_week
+        self.__start_time = start_time
+
+    def getDayOfTheWeek(self) -> str:
+        """ Broadcast day of the week.
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__day_of_the_week.name
+
+    def getStartTime(self) -> str:
+        """ Anime start time in JST
+
+        Returns
+        -----------
+        :class:`str`
+        """
+
+        return self.__start_time
