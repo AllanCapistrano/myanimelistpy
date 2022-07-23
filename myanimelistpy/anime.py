@@ -6,7 +6,7 @@ from .picture import Picture
 from .alternativeTitles import AlternativeTitles
 from .genre import Genre
 from .enums.mediaTypeEnum import MediaTypeEnum
-from .enums.statusEnum import StatusEnum
+from .enums.airingStatusEnum import AiringStatusEnum
 from .season import Season
 from .broadcast import Broadcast
 from .enums.sourceEnum import SourceEnum
@@ -163,7 +163,7 @@ class Anime(Node):
                 case "status":
                     status_type: str = node["status"]
 
-                    self.__status: StatusEnum = StatusEnum[status_type].value
+                    self.__status: AiringStatusEnum = AiringStatusEnum[status_type].value
 
                     pass
                 case "num_episodes":
