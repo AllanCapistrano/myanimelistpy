@@ -716,6 +716,5 @@ class TestGetAnimeListInDict(unittest.TestCase):
                 fields     = fields
             )
 
-
 if __name__ == "__main__":
     unittest.main()
