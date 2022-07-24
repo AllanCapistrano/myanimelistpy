@@ -106,8 +106,7 @@ class TestGetAnimeListInDict(unittest.TestCase):
         """
 
         fields = [
-            "end_date",
-            "synopsis"
+            "end_date"
         ]
 
         anime_list = self.my_anime_list.getAnimeListInDict(
