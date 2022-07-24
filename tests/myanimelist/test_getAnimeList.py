@@ -6,7 +6,7 @@ from os import getenv
 from dotenv import load_dotenv
 
 from myanimelistpy.myanimelist import MyAnimeList
-from myanimelistpy.anime import Anime
+from myanimelistpy.objects.anime import Anime
 
 class TestGetAnimeList(unittest.TestCase):
     @classmethod
