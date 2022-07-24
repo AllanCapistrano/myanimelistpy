@@ -19,12 +19,16 @@ packages = [
     "myanimelistpy.services"
 ]
 
+readme = ''
+with open('README.md') as f:
+    readme = f.read()
+
 setup(
     name='myanimelistpy',
     packages=packages,
-    version='0.1.0',
+    version='0.1.3',
     description='A library to use the MyAnimeList API more easily.',
-    long_description='./README.md',
+    long_description=readme,
     long_description_content_type="text/markdown",
     url='https://github.com/AllanCapistrano/myanimelistpy',
     project_urls={
@@ -32,16 +36,15 @@ setup(
       },
     author='AllanCapistrano',
     author_email='asantos@ecomp.uefs.br',
-    license='GPL-3.0',
+    license='GNU General Public License v3 (GPLv3)',
     classifiers=[
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
-		"Programming Language :: Python :: 3",
 		"Programming Language :: Python :: 3.10",
-        'Topic :: Anime',
-        'Topic :: Anime :: MyAnimeList',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
 	],
     python_requires='>=3.10.0',
     install_requires=requirements,
