@@ -17,7 +17,7 @@ or
 python3 -m pip install -U myanimelistpy
 
 # Windows
-python -m pip install -U myanimelistpy
+py -m pip install -U myanimelistpy
 ```
 
 ---
