@@ -1,7 +1,7 @@
 # myanimelistpy
 
 <p align="center">
-  <img src="" alt="myanimelistpy icon" width="700px" height="350px">
+  <img src="https://github.com/AllanCapistrano/myanimelistpy/blob/main/images/myanimelistpy-logo-rounded.png" alt="myanimelistpy icon" width="180px" height="180px">
 </p>
 <h3 align="center">A library to use the MyAnimeList API more easily.</h3>
 
