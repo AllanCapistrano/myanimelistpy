@@ -1,8 +1,9 @@
 import requests
 from typing import List
+from json import dumps
 
 from .services.validateFields import validateFields
-from .anime import Anime
+from .objects.anime import Anime
 
 # ------------------------------ Constants ----------------------------------- #
 BASE_URL            = "https://api.myanimelist.net/v2"
@@ -23,6 +24,48 @@ class MyAnimeList:
         self.client_id = client_id
         self.base_url  =  BASE_URL
 
+    def getAnimeListInDict(
+        self, 
+        anime_name: str, 
+        limit: int = 100, 
+        offset: int = 0,
+        fields: List[str] = []
+    ) -> dict:
+        """ Returns a list of dicts containing the anime by name.
+
+        Parameters
+        -----------
+        anime_name: :class:`str`
+            Name of the anime/series.
+        limit: :class:`int`
+            The maximum size of the list. `The default value is 100`.
+        offset: :class:`offset`
+            The list offset. `The default value is 0`.
+        fields: :class:`fields`
+            List of fields used to show more information about the anime. If is 
+            empty, the default fields are `id`, `title` and `main_picture`.
+
+        Returns
+        -----------
+        animes: :class:`dict`
+        """
+
+        validateFields(fields=fields)
+
+        url = f"{BASE_URL}/{ANIME_LIST_ENDPOINT}?q={anime_name}&limit={limit}&offset={offset}"
+
+        if(len(fields) > 0):
+            url += f"&fields={fields}"
+
+        response = requests.get(
+            url     = url,
+            headers = {AUTH_HEADER: self.client_id}
+        )
+
+        temp: List[dict] = response.json()["data"]
+
+        return temp
+    
     def getAnimeList(
         self, 
         anime_name: str, 
@@ -30,7 +73,7 @@ class MyAnimeList:
         offset: int = 0,
         fields: List[str] = []
     ) -> List[Anime]:
-        """ Returns a list of the anime by the name.
+        """ Returns a list of the anime by name.
 
         Parameters
         -----------
@@ -49,24 +92,55 @@ class MyAnimeList:
         animes: :class:`List[Anime]`
         """
 
-        validateFields(fields=fields)
-
-        url = f"{BASE_URL}/{ANIME_LIST_ENDPOINT}?q={anime_name}&limit={limit}&offset={offset}"
-
-        if(len(fields) > 0):
-            url += f"&fields={fields}"
-
-        response = requests.get(
-            url     = url,
-            headers = {AUTH_HEADER: self.client_id}
+        responseJson: dict = self.getAnimeListInDict(
+            anime_name = anime_name,
+            limit      = limit,
+            offset     = offset,
+            fields     = fields,
         )
 
-        responseJson: dict  = response.json()
         animes: List[Anime] = []
 
-        for index in range(len(responseJson["data"])):
+        for index in range(len(responseJson)):
             animes.append(
-                Anime(node=responseJson["data"][index]["node"], fields=fields)
+                Anime(node=responseJson[index]["node"], fields=fields)
             )
 
         return animes
+
+    def getAnimeListInJSON(
+        self, 
+        anime_name: str, 
+        limit: int = 100, 
+        offset: int = 0,
+        fields: List[str] = []
+    ) -> str:
+        """ Returns a JSON stringified containing the list of the anime by name.
+
+        Parameters
+        -----------
+        anime_name: :class:`str`
+            Name of the anime/series.
+        limit: :class:`int`
+            The maximum size of the list. `The default value is 100`.
+        offset: :class:`offset`
+            The list offset. `The default value is 0`.
+        fields: :class:`fields`
+            List of fields used to show more information about the anime. If is 
+            empty, the default fields are `id`, `title` and `main_picture`.
+
+        Returns
+        -----------
+        animes: :class:`str`
+        """
+
+        responseJson: dict = self.getAnimeListInDict(
+            anime_name = anime_name,
+            limit      = limit,
+            offset     = offset,
+            fields     = fields,
+        )
+
+        # TODO: Create tests for this method.
+
+        return '{"data":' + dumps(responseJson) + '}'
