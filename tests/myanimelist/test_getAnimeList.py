@@ -425,7 +425,7 @@ class TestGetAnimeList(unittest.TestCase):
         self.assertEqual(
             "Fall", 
             anime.getStartSeason().getSeason(), 
-            "Should be 'fall'."
+            "Should be 'Fall'."
         )
         self.assertEqual(
             2011, 
