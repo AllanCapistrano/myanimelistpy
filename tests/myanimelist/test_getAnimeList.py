@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 from myanimelistpy.myanimelist import MyAnimeList
 from myanimelistpy.anime import Anime
 from myanimelistpy.enums.nsfwEnum import NsfwEnum
-from myanimelistpy.picture import Picture
 
 class TestMyAnimeList(unittest.TestCase):
     @classmethod
