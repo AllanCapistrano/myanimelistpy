@@ -1,4 +1,4 @@
-from .enums.seasonEnum import SeasonEnum
+from ..enums.seasonEnum import SeasonEnum
 
 class Season:
     def __init__(self, year: int, season: SeasonEnum) -> None:

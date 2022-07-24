@@ -1,4 +1,4 @@
-from .enums.dayWeekEnum import DayWeekEnum
+from ..enums.dayWeekEnum import DayWeekEnum
 
 class Broadcast:
     def __init__(self, day_of_the_week: DayWeekEnum, start_time: str) -> None:

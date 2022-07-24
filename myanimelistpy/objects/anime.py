@@ -1,23 +1,23 @@
 from typing import List
 
 from .node import Node
-from .enums.nsfwEnum import NsfwEnum
+from ..enums.nsfwEnum import NsfwEnum
 from .picture import Picture
 from .alternativeTitles import AlternativeTitles
 from .genre import Genre
-from .enums.mediaTypeEnum import MediaTypeEnum
-from .enums.airingStatusEnum import AiringStatusEnum
+from ..enums.mediaTypeEnum import MediaTypeEnum
+from ..enums.airingStatusEnum import AiringStatusEnum
 from .season import Season
 from .broadcast import Broadcast
-from .enums.sourceEnum import SourceEnum
-from .enums.ratingEnum import RatingEnum
+from ..enums.sourceEnum import SourceEnum
+from ..enums.ratingEnum import RatingEnum
 from .studio import Studio
 from .relatedNode import RelatedNode
 from .recommendation import Recommendation
 from .statistics import Statistics
-from .enums.dayWeekEnum import DayWeekEnum
-from .enums.relationTypeEnum import RelationTypeEnum
-from .enums.seasonEnum import SeasonEnum
+from ..enums.dayWeekEnum import DayWeekEnum
+from ..enums.relationTypeEnum import RelationTypeEnum
+from ..enums.seasonEnum import SeasonEnum
 from .statisticsStatus import StatisticsStatus
 
 class Anime(Node):
