@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 
 from myanimelistpy.myanimelist import MyAnimeList
 from myanimelistpy.anime import Anime
-from myanimelistpy.enums.nsfwEnum import NsfwEnum
 
 class TestGetAnimeList(unittest.TestCase):
     @classmethod
@@ -19,7 +18,6 @@ class TestGetAnimeList(unittest.TestCase):
         self.anime_name    = "Hunter x Hunter"
         self.limit         = "4"
         self.offset        = 0
-        
 
     def test_getAnimeList_length(self):
         """ Check the length of the anime list.
@@ -266,7 +264,11 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
 
-        self.assertEqual(NsfwEnum["white"].value, anime.getNsfwClassification())
+        self.assertEqual(
+            "This work is safe for work", 
+            anime.getNsfwClassification(),
+            "Should be 'This work is safe for work'."
+        )
     
     def test_getAnimeList_genres_field(self):
         """ Check if the 'genres' field used for the request are 
