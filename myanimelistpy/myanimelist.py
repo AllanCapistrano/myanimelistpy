@@ -3,7 +3,7 @@ from typing import List
 from json import dumps
 
 from .services.validateFields import validateFields
-from .objects.anime import Anime
+from .models.anime import Anime
 
 # ------------------------------ Constants ----------------------------------- #
 BASE_URL            = "https://api.myanimelist.net/v2"
