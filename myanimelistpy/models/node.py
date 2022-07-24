@@ -1,11 +1,10 @@
 from .picture import Picture
-from ..enums.relationTypeEnum import RelationTypeEnum
 
 class Node:
     def __init__(self, 
         id: int,
         title: str, 
-        main_picture: Picture, 
+        main_picture: dict, 
     ) -> None:
         """ Constructor
 
@@ -15,13 +14,16 @@ class Node:
             ID of the anime or manga.
         title: :class:`str`
             Title of the anime or manga.
-        main_picture: :class:`Picture`
+        main_picture: :class:`dict`
             Main picture of the anime or manga.
         """
 
         self.__id           = id
         self.__title        = title
-        self.__main_picture = main_picture
+        self.__main_picture = Picture(
+            large  = main_picture["large"], 
+            medium = main_picture["medium"]
+        )
 
     def getId(self) -> int:
         """ Anime or manga ID.
