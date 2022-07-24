@@ -9,7 +9,7 @@ from myanimelistpy.myanimelist import MyAnimeList
 from myanimelistpy.anime import Anime
 from myanimelistpy.enums.nsfwEnum import NsfwEnum
 
-class TestMyAnimeList(unittest.TestCase):
+class TestGetAnimeList(unittest.TestCase):
     @classmethod
     def setUpClass(self) -> None:
         load_dotenv()
