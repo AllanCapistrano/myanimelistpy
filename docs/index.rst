@@ -23,7 +23,7 @@ Installation
 ++++++++++++
 .. _installation:
 
-How to install the myanimelistpy package.
+How to install the myanimelistpy library.
 
 .. code:: sh
 
@@ -44,7 +44,17 @@ Getting started
 
 Is this your first time using the library? This is the place to get started!
 
+:doc:`Click here </Getting-started/index>` to check how to use **myanimelispy** 
+and start developing with us.
+
 Manuals
 +++++++
 
-These pages go into great detail about everything the package can do.
+These pages go into great detail about everything the library can do.
+
+Help
+++++
+
+If you're having any issues or questions with the library, head over to our `GitHub 
+issues page <https://github.com/AllanCapistrano/myanimelistpy/issues>`_ and let 
+us know.
