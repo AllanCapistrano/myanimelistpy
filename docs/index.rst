@@ -21,6 +21,7 @@ Welcome to myanimelistpy's documentation!
 
 Installation
 ++++++++++++
+.. _installation:
 
 How to install the myanimelistpy package.
 
