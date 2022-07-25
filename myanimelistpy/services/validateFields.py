@@ -7,8 +7,8 @@ def validateFields(fields: List[str]) -> bool:
 
     Parameters
     -----------
-    fields: :class:`list`
-        FieldsEnum list.
+    fields: :class:`List[str]`
+         List of fields.
 
     Returns
     -----------
