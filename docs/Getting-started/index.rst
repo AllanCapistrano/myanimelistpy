@@ -1,11 +1,8 @@
 Getting started
 ===============
 
-First steps
-+++++++++++
-
 Client ID
----------
++++++++++
 
 First, you need to get a **Client ID** in the MyAnimeList platform. To do this, follow these steps:
 
@@ -17,15 +14,13 @@ First, you need to get a **Client ID** in the MyAnimeList platform. To do this, 
 #. After creating your **Clients Accessing the MAL API**, click on **Edit** button, then copy and save your **Client ID**.
 
 Installation
-------------
+++++++++++++
 
-Click here to check how to install the myanimelistpy package.
+:ref:`Click here <installation>` to check how to install the myanimelistpy library.
 
 Examples
 ++++++++
 .. toctree::
    :maxdepth: 2
-   :hidden:
-   :caption: Examples
 
    examples/anime-list
