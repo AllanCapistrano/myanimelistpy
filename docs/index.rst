@@ -6,7 +6,11 @@
 Welcome to myanimelistpy's documentation!
 =========================================
 
-A library to use the MyAnimeList API more easily.
+.. image:: ../images/myanimelistpy-logo-rounded.png
+    :align: center
+    :alt: myanimelistpy logo
+
+.. centered:: A library to use the MyAnimeList API more easily.
 
 .. toctree::
    :maxdepth: 2
@@ -16,7 +20,7 @@ A library to use the MyAnimeList API more easily.
    Manuals/api-reference
 
 Installation
-------------
+++++++++++++
 
 How to install the myanimelistpy package.
 
@@ -35,11 +39,11 @@ or
    py -m pip install -U myanimelistpy
 
 Getting started
----------------
++++++++++++++++
 
 Is this your first time using the library? This is the place to get started!
 
 Manuals
--------
++++++++
 
 These pages go into great detail about everything the package can do.
