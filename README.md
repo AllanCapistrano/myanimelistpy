@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     anime_list = my_anime_list.getAnimeList(
         anime_name = "Hunter x Hunter",
-        limit      = 4
+        limit      = 2
     )
 
     for anime in anime_list:
