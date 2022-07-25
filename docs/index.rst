@@ -17,7 +17,7 @@ Welcome to myanimelistpy's documentation!
    :hidden:
 
    Getting-started/index
-   Manuals/api-reference
+   Manuals/reference
 
 Installation
 ++++++++++++
