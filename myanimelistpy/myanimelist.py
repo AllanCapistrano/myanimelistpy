@@ -31,7 +31,7 @@ class MyAnimeList:
         offset: int = 0,
         fields: List[str] = []
     ) -> dict:
-        """ Returns a list of dicts containing the anime by name.
+        """ Returns a list of dictionaries containing the anime by name.
 
         Parameters
         -----------
@@ -73,7 +73,7 @@ class MyAnimeList:
         offset: int = 0,
         fields: List[str] = []
     ) -> List[Anime]:
-        """ Returns a list of the anime by name.
+        """ Returns a list of anime by name.
 
         Parameters
         -----------
@@ -115,7 +115,7 @@ class MyAnimeList:
         offset: int = 0,
         fields: List[str] = []
     ) -> str:
-        """ Returns a JSON stringified containing the list of the anime by name.
+        """ Returns a JSON stringified containing the list of anime by name.
 
         Parameters
         -----------
