@@ -39,9 +39,9 @@ class MyAnimeList:
             Name of the anime/series.
         limit: :class:`int`
             The maximum size of the list. `The default value is 100`.
-        offset: :class:`offset`
+        offset: :class:`int`
             The list offset. `The default value is 0`.
-        fields: :class:`fields`
+        fields: :class:`List[str]`
             List of fields used to show more information about the anime. If is 
             empty, the default fields are `id`, `title` and `main_picture`.
 
@@ -81,9 +81,9 @@ class MyAnimeList:
             Name of the anime/series.
         limit: :class:`int`
             The maximum size of the list. `The default value is 100`.
-        offset: :class:`offset`
+        offset: :class:`int`
             The list offset. `The default value is 0`.
-        fields: :class:`fields`
+        fields: :class:`List[str]`
             List of fields used to show more information about the anime. If is 
             empty, the default fields are `id`, `title` and `main_picture`.
 
@@ -123,9 +123,9 @@ class MyAnimeList:
             Name of the anime/series.
         limit: :class:`int`
             The maximum size of the list. `The default value is 100`.
-        offset: :class:`offset`
+        offset: :class:`int`
             The list offset. `The default value is 0`.
-        fields: :class:`fields`
+        fields: :class:`List[str]`
             List of fields used to show more information about the anime. If is 
             empty, the default fields are `id`, `title` and `main_picture`.
 
@@ -140,7 +140,5 @@ class MyAnimeList:
             offset     = offset,
             fields     = fields,
         )
-
-        # TODO: Create tests for this method.
 
         return '{"data":' + dumps(responseJson) + '}'
