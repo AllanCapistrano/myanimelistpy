@@ -235,7 +235,7 @@ Methods
 .. method:: getStartDate()
 .. _getStartDate:
 
-    The anime start date. Format `YYYY-mm-dd`.
+    The anime start date. Format ``YYYY-mm-dd``.
 
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
@@ -243,7 +243,7 @@ Methods
 .. method:: getEndDate()
 .. _getEndDate:
 
-    The anime end date. Format `YYYY-mm-dd`.
+    The anime end date. Format ``YYYY-mm-dd``.
 
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
