@@ -90,9 +90,6 @@ Request with fields
     library to do this. `Click here <https://saurabh-kumar.com/python-dotenv/>`_ 
     to check out their documentation.
 
-    Using ``.env`` file
-    ~~~~~~~~~~~~~~~~~~~
-
     .. code-block:: python3
         :lineno-start: 1
 
