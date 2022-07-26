@@ -448,7 +448,7 @@ class Anime(Node):
         return self.__num_scoring_users
 
     def getNsfwClassification(self) -> str:
-        """ Anime NSFW Classification
+        """ Anime NSFW classification.
 
         Returns
         -----------
