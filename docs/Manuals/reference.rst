@@ -41,9 +41,7 @@ Methods
         List of animes.
         
     **Return type:**
-        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [Anime]
-
-        .. TODO: Colocar hyperlink em Anime
+        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Anime <anime>`]
 
 .. method:: getAnimeListInDict(anime_name, limit = 100, offset = 0, fields = [])
 .. _getAnimeListInDict:
@@ -124,10 +122,8 @@ created by the user of the library.
     The classes listed below are not intended to be created by users and are 
     also read-only.
 
-    .. TODO: Colocar hyperlink em Anime
-
-    For example, this means that you should not make your own Anime instances 
-    nor should you modify the Anime instance yourself.
+    For example, this means that you should not make your own :ref:`Anime <anime>` instances 
+    nor should you modify the :ref:`Anime <anime>` instance yourself.
 
 AlternativeTitles
 -----------------
@@ -140,9 +136,9 @@ AlternativeTitles
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getSynonyms <getSynonyms>`
-    * - :ref:`getEnglish <getEnglish>`
-    * - :ref:`getJapanese <getJapanese>`
+    * - :ref:`getSynonyms() <getSynonyms>`
+    * - :ref:`getEnglish() <getEnglish>`
+    * - :ref:`getJapanese() <getJapanese>`
 
 **Parameters:**
     - synonyms (`List <https://docs.python.org/3/library/stdtypes.html#list>`_ [`str <https://docs.python.org/3/library/stdtypes.html#str>`_]) - A list of title synonyms.
@@ -180,7 +176,7 @@ Anime
 -----
 .. _Anime:
 
-.. class:: Anime(node, fields)
+.. class:: models.anime.Anime(node, fields)
 
 .. list-table::
     :widths: 10 10
@@ -188,34 +184,38 @@ Anime
 
     * - Methods
       - Methods
-    * - :ref:`getAlternativeTitle <getAlternativeTitle>`
-      - :ref:`getStartDate <getStartDate>`
-    * - :ref:`getEndDate <getEndDate>`
-      - :ref:`getSynopsis <getSynopsis>`
-    * - :ref:`getMean <getMean>`
-      - :ref:`getRank <getRank>`
-    * - :ref:`getPopularity <getPopularity>`
-      - :ref:`getNumUserList <getNumUserList>`
-    * - :ref:`getNumScoringUsers <getNumScoringUsers>`
-      - :ref:`getNsfwClassification <getNsfwClassification>`
-    * - :ref:`getGenres <getGenres>`
-      - :ref:`getCreatedAt <getCreatedAt>`
-    * - :ref:`getUpdatedAt <getUpdatedAt>`
-      - :ref:`getMediaType <getMediaType>`
-    * - :ref:`getStatus <getStatus>`
-      - :ref:`getNumEpisodes <getNumEpisodes>`
-    * - :ref:`getStartSeason <getStartSeason>`
-      - :ref:`getBroadcast <getBroadcast>`
-    * - :ref:`getSource <getSource>`
-      - :ref:`getAvgEpisodeDurationInSeconds <getAvgEpisodeDurationInSeconds>`
-    * - :ref:`getRating <getRating>`
-      - :ref:`getStudios <getStudios>`
-    * - :ref:`getPictures <getPictures>`
-      - :ref:`getBackground <getBackground>`
-    * - :ref:`getRelatedAnimes <getRelatedAnimes>`
-      - :ref:`getRelatedMangas <getRelatedMangas>`
-    * - :ref:`getRecommendations <getRecommendations>`
-      - :ref:`getStatistics <getStatistics>`
+    * - :ref:`getId() <getIdAnime>`
+      - :ref:`getTitle() <getTitleAnime>`
+    * - :ref:`getMainPicture <getMainPictureAnime>`
+      - :ref:`getStartDate() <getStartDate>`
+    * - :ref:`getAlternativeTitle() <getAlternativeTitle>`
+      - :ref:`getSynopsis() <getSynopsis>`
+    * - :ref:`getEndDate() <getEndDate>`
+      - :ref:`getRank() <getRank>`
+    * - :ref:`getMean() <getMean>`
+      - :ref:`getNumUserList() <getNumUserList>`
+    * - :ref:`getPopularity() <getPopularity>`
+      - :ref:`getNsfwClassification() <getNsfwClassification>`
+    * - :ref:`getNumScoringUsers() <getNumScoringUsers>`
+      - :ref:`getCreatedAt() <getCreatedAt>`
+    * - :ref:`getGenres() <getGenres>`
+      - :ref:`getMediaType() <getMediaType>`
+    * - :ref:`getUpdatedAt() <getUpdatedAt>`
+      - :ref:`getNumEpisodes() <getNumEpisodes>`
+    * - :ref:`getStatus() <getStatus>`
+      - :ref:`getBroadcast() <getBroadcast>`
+    * - :ref:`getStartSeason() <getStartSeason>`
+      - :ref:`getAvgEpisodeDurationInSeconds() <getAvgEpisodeDurationInSeconds>`
+    * - :ref:`getSource() <getSource>`
+      - :ref:`getStudios() <getStudios>`
+    * - :ref:`getRating() <getRating>`
+      - :ref:`getBackground() <getBackground>`
+    * - :ref:`getPictures() <getPictures>`
+      - :ref:`getRelatedMangas() <getRelatedMangas>`
+    * - :ref:`getRelatedAnimes() <getRelatedAnimes>`
+      - :ref:`getStatistics() <getStatistics>`
+    * - :ref:`getRecommendations() <getRecommendations>`
+      - 
 
 **Parameters:**
     - node (`dict <https://docs.python.org/3/library/stdtypes.html#dict>`_) - The JSON object anime.
@@ -223,6 +223,33 @@ Anime
 
 Methods
 ~~~~~~~
+
+.. method:: getId()
+    :noindex:
+.. _getIdAnime:
+
+    Anime ID.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getTitle()
+    :noindex:
+.. _getTitleAnime:
+
+    Anime title.
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+.. method:: getMainPicture()
+    :noindex:
+.. _getMainPictureAnime:
+
+    Anime main picture.
+
+    **Return type:**
+        :ref:`Picture <picture>`
 
 .. method:: getAlternativeTitle()
 .. _getAlternativeTitle:
@@ -310,8 +337,7 @@ Methods
     The list of anime genres.
 
     **Return type:**
-        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [Genre]
-        .. TODO: Colocar hyperlink genre.
+        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Genre <genre>`]
 
 .. method:: getCreatedAt()
 .. _getCreatedAt:
@@ -359,8 +385,7 @@ Methods
     Anime start season.
 
     **Return type:**
-        Season
-        .. TODO: colocar hyperlink de Season
+        :ref:`Season <Season>`
 
 .. method:: getBroadcast()
 .. _getBroadcast:
@@ -368,8 +393,7 @@ Methods
     Broadcast day of the week and start time (JST).
 
     **Return type:**
-        Broadcast | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
-        .. TODO: colocar hyperlink de Broadcast
+        :ref:`Broadcast <broadcast>` | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 .. method:: getSource()
 .. _getSource:
@@ -401,8 +425,7 @@ Methods
     List of studios that produced the anime.
 
     **Return type:**
-        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [Studio]
-        .. TODO: Colocar hyperlink Studio.
+        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Studio <studio>`]
 
 .. method:: getPictures()
 .. _getPictures:
@@ -412,8 +435,7 @@ Methods
     .. important:: You cannot contain this field in a list.
 
     **Return type:**
-        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [Picture] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
-        .. TODO: Colocar hyperlink Picture.
+        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Picture <picture>`] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 .. method:: getBackground()
 .. _getBackground:
@@ -433,8 +455,7 @@ Methods
     .. important:: You cannot contain this field in a list.
 
     **Return type:**
-        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [RelatedNode] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
-        .. TODO: Colocar hyperlink RelatedNode.
+        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`RelatedNode <relatedNode>`] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 .. method:: getRelatedMangas()
 .. _getRelatedMangas:
@@ -444,8 +465,7 @@ Methods
     .. important:: You cannot contain this field in a list.
 
     **Return type:**
-        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [RelatedNode] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
-        .. TODO: Colocar hyperlink RelatedNode.
+        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`RelatedNode <relatedNode>`] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 .. method:: getRecommendations()
 .. _getRecommendations:
@@ -455,8 +475,7 @@ Methods
     .. important:: You cannot contain this field in a list.
 
     **Return type:**
-        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [Recommendation] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
-        .. TODO: Colocar hyperlink Recommendation.
+        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Recommendation <recommendation>`] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
 .. method:: getStatistics()
 .. _getStatistics:
@@ -466,11 +485,436 @@ Methods
     .. important:: You cannot contain this field in a list.
 
     **Return type:**
-        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [Statistics] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
-        .. TODO: Colocar hyperlink Statistics.
+        `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Statistics <statistics>`] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
+
+Broadcast
+---------
+
+.. class:: models.broadcast.Broadcast(day_of_the_week, start_time)
+.. _Broadcast:
+
+.. list-table::
+    :widths: 10
+    :header-rows: 1
+
+    * - Methods
+    * - :ref:`getDayOfTheWeek() <getDayOfTheWeek>`
+    * - :ref:`getStartTime() <getStartTime>`
+
+**Parameters:**
+    - day_of_the_week (:ref:`DayWeekEnum <dayWeekEnum>`) - Day of the week broadcast in Japan time.
+    - start_time (`str <https://docs.python.org/3/library/stdtypes.html#str>`_) - Time in hours format that is broadcasted.
+    
+Methods
+~~~~~~~
+
+.. method:: getDayOfTheWeek()
+.. _getDayOfTheWeek:
+
+    Broadcast day of the week.    
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+.. method:: getStartTime()
+.. _getStartTime:
+
+    Anime start time in JST.
+
+     **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+Genre
+-----
+.. _Genre:
+
+.. class:: models.genre.Genre(id, name)
+
+.. list-table::
+    :widths: 10
+    :header-rows: 1
+
+    * - Methods
+    * - :ref:`getId() <getIdGenre>`
+    * - :ref:`getName() <getNameGenre>`
+
+**Parameters:**
+    - id (`int <https://docs.python.org/3/library/functions.html#int>`_) - ID of the genre.
+    - name (`str <https://docs.python.org/3/library/stdtypes.html#str>`_) - Name of the genre.
+
+Methods
+~~~~~~~
+
+.. method:: getId()
+.. _getIdGenre:
+
+    Genre ID.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getName()
+.. _getNameGenre:
+
+    Genre name.
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+Node
+----
+.. _Node:
+
+.. class:: models.node.Node(id, title, main_picture)
+
+.. list-table::
+    :widths: 10
+    :header-rows: 1
+
+    * - Methods
+    * - :ref:`getId() <getIdNode>`
+    * - :ref:`getTitle() <getTitle>`
+    * - :ref:`getMainPicture() <getMainPicture>`
+
+**Parameters:**
+    - id (`int <https://docs.python.org/3/library/functions.html#int>`_) - 
+    - title (`str <https://docs.python.org/3/library/stdtypes.html#str>`_) - 
+    - main_picture () - 
+
+Methods
+~~~~~~~
+
+.. method:: getId()
+    :noindex:
+.. _getIdNode:
+
+    Anime or manga ID.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getTitle()
+.. _getTitle:
+
+    Anime or manga title.
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+.. method:: getMainPicture()
+.. _getMainPicture:
+
+    Anime or manga main picture.
+
+    **Return type:**
+        :ref:`Picture <picture>`
+
+Picture
+-------
+.. _Picture:
+
+.. class:: models.picture.Picture(large, medium)
+
+.. list-table::
+    :widths: 10
+    :header-rows: 1
+
+    * - Methods
+    * - :ref:`getLarge() <getLarge>`
+    * - :ref:`getMedium() <getMedium>`
+
+**Parameters:**
+    - large (`str <https://docs.python.org/3/library/stdtypes.html#str>`_) - The URI of an anime's large picture.
+    - medium (`str <https://docs.python.org/3/library/stdtypes.html#str>`_) - The URI of an anime's medium picture.
+
+Methods
+~~~~~~~
+
+.. method:: getLarge()
+.. _getLarge:
+
+    Large size picture.
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+.. method:: getMedium()
+.. _getMedium:
+
+    Medium size picture.
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+Recommendation
+--------------
+.. _Recommendation:
+
+.. class:: models.recommendation.Recommendation(id, title, main_picture, num_recommendations)
+
+.. list-table::
+    :widths: 10
+    :header-rows: 1
+
+    * - Methods
+    * - :ref:`getId() <getIdRecommendation>`
+    * - :ref:`getTitle() <getTitleRecommendation>`
+    * - :ref:`getMainPicture() <getMainPictureRecommendation>`
+    * - :ref:`getNumRecommendations() <getNumRecommendations>`
+
+**Parameters:**
+    - id (`int <https://docs.python.org/3/library/functions.html#int>`_) - ID of the anime.
+    - title (`str <https://docs.python.org/3/library/stdtypes.html#str>`_) - Title of the anime.
+    - main_picture (:ref:`Picture <picture>`) -  Main picture of the anime.
+    - num_recommendations (`int <https://docs.python.org/3/library/functions.html#int>`_) - Number of recommendations of the anime.
+
+Methods
+~~~~~~~
+
+.. method:: getId()
+    :noindex:
+.. _getIdRecommendation:
+
+    Anime ID.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getTitle()
+    :noindex:
+.. _getTitleRecommendation:
+
+    Anime title.
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+.. method:: getMainPicture()
+    :noindex:
+.. _getMainPictureRecommendation:
+
+    Anime main picture.
+
+    **Return type:**
+        :ref:`Picture <picture>`
+
+.. method:: getNumRecommendations()
+.. _getNumRecommendations:
+
+    Number of recommendations.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+RelatedNode
+-----
+.. _RelatedNode:
+
+.. class:: models.relatedNode.RelatedNode(id, title, main_picture, relation_type)
+
+.. list-table::
+    :widths: 10
+    :header-rows: 1
+
+    * - Methods
+    * - :ref:`getId() <getIdRelatedNode>`
+    * - :ref:`getTitle() <getTitleRelatedNode>`
+    * - :ref:`getMainPicture() <getMainPictureRelatedNode>`
+    * - :ref:`getRelationType() <getRelationType>`
+
+**Parameters:**
+    - id (`int <https://docs.python.org/3/library/functions.html#int>`_) - ID of the anime or manga.
+    - title (`str <https://docs.python.org/3/library/stdtypes.html#str>`_) - Title of the anime or manga.
+    - main_picture (:ref:`Picture <picture>`) - Main picture of the anime or manga.
+    - relation_type (:ref:`RelationTypeEnum <RelationTypeEnum>`) - Relation type of the anime or manga.
+
+Methods
+~~~~~~~
+
+.. method:: getId()
+    :noindex:
+.. _getIdRelatedNode:
+
+    Anime or manga ID.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getTitle()
+    :noindex:
+.. _getTitleRelatedNode:
+
+    Anime or manga title.
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+.. method:: getMainPicture()
+    :noindex:
+.. _getMainPictureRelatedNode:
+
+    Anime or manga main picture.
+
+    **Return type:**
+        :ref:`Picture <picture>`
+
+.. method:: getRelationType()
+.. _getRelationType:
+
+    Anime or manga relation type.
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+Season
+------
+.. _Season:
+
+.. class:: models.season.Season(year, season)
+
+.. list-table::
+    :widths: 10
+    :header-rows: 1
+
+    * - Methods
+    * - :ref:`getYear() <getYear>`
+    * - :ref:`getSeason() <getSeason>`
+
+
+**Parameters:**
+    - year (`int <https://docs.python.org/3/library/functions.html#int>`_) - Year of season.
+    - season (:ref:`SeasonEnum <SeasonEnum>`) - Season name.
+
+Methods
+~~~~~~~
+
+.. method:: getYear()
+.. _getYear:
+
+    Year of season.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getSeason()
+.. _getSeason:
+
+    Season name.
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+Statistics
+----------
+.. _Statistics:
+
+.. class:: models.statistics.Statistics(num_list_users, status)
+
+.. list-table::
+    :widths: 10
+    :header-rows: 1
+
+    * - Methods
+    * - :ref:`getNumUserLis() <getNumUserLis>`
+    * - :ref:`getStatus() <getStatusStatistics>`
+
+
+**Parameters:**
+    - num_list_users (`int <https://docs.python.org/3/library/functions.html#int>`_) - Number of users who added the anime to their list.
+    - status (:ref:`StatisticsStatus <StatisticsStatus>`) - Users list status.
+
+Methods
+~~~~~~~
+
+.. method:: getNumUserLis()
+.. _getNumUserLis:
+
+    The number of users who have the anime in their list.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getStatus()
+    :noindex:
+.. _getStatusStatistics:
+
+    Anime status in the users list.
+
+    **Return type:**
+        :ref:`StatisticsStatus <StatisticsStatus>`
+
+StatisticsStatus
+-----
+.. _StatisticsStatus:
+
+.. class:: models.statisticsStatus.StatisticsStatus(watching, completed, on_hold, dropped, plan_to_watch)
+
+.. list-table::
+    :widths: 10
+    :header-rows: 1
+
+    * - Methods
+    * - :ref:`getNumWatching() <getNumWatching>`
+    * - :ref:`getNumCompleted() <getNumCompleted>`
+    * - :ref:`getNumOnHold() <getNumOnHold>`
+    * - :ref:`getNumDropped() <getNumDropped>`
+    * - :ref:`getNumPlanToWatch() <getNumPlanToWatch>`
+
+
+**Parameters:**
+    - watching (`int <https://docs.python.org/3/library/functions.html#int>`_) - Number of users who are watching.
+    - completed (`int <https://docs.python.org/3/library/functions.html#int>`_) - Number of users who completed.
+    - on_hold (`int <https://docs.python.org/3/library/functions.html#int>`_) - Number of users who are on hold.
+    - dropped (`int <https://docs.python.org/3/library/functions.html#int>`_) - Number of users who dropped.
+    - plan_to_watch (`int <https://docs.python.org/3/library/functions.html#int>`_) - Number of users who are plan to watch.
+
+Methods
+~~~~~~~
+
+.. method:: getNumWatching()
+.. _getNumWatching:
+
+    The number of users who are watching the anime.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getNumCompleted()
+.. _getNumCompleted:
+
+    The number of users who are completed the anime.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getNumOnHold()
+.. _getNumOnHold:
+
+    The number of users who are waiting for the anime.
+
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getNumDropped()
+.. _getNumDropped:
+
+    The number of users who are dropped the anime.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getNumPlanToWatch()
+.. _getNumPlanToWatch:
+
+    The number of users who plan to watch the anime.
+
+    **Return type:**
+        `int <https://docs.python.org/3/library/functions.html#int>`_
 
 Title
 -----
+.. _Title:
 
 .. class:: models.
 
@@ -479,7 +923,8 @@ Title
     :header-rows: 1
 
     * - Methods
-    * - :ref:` <>`
+    * - :ref:`() <>`
+
 
 **Parameters:**
     -  () - 
