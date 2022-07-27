@@ -26,7 +26,7 @@ class Broadcast:
         return self.__day_of_the_week.name
 
     def getStartTime(self) -> str:
-        """ Anime start time in JST
+        """ Anime start time in JST.
 
         Returns
         -----------
