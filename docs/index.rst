@@ -52,6 +52,8 @@ Manuals
 
 These pages go into great detail about everything the library can do.
 
+- :doc:`Reference Manual </Manuals/reference>`
+
 Help
 ++++
 
