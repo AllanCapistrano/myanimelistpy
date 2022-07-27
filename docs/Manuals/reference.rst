@@ -707,7 +707,7 @@ Methods
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
 RelatedNode
------
+-----------
 .. _RelatedNode:
 
 .. class:: models.relatedNode.RelatedNode(id, title, main_picture, relation_type)
@@ -844,7 +844,7 @@ Methods
         :ref:`StatisticsStatus <StatisticsStatus>`
 
 StatisticsStatus
------
+----------------
 .. _StatisticsStatus:
 
 .. class:: models.statisticsStatus.StatisticsStatus(watching, completed, on_hold, dropped, plan_to_watch)
@@ -912,31 +912,45 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-Title
------
-.. _Title:
+Studio
+------
+.. _Studio:
 
-.. class:: models.
+.. class:: models.studio.Studio(id, name)
 
 .. list-table::
     :widths: 10
     :header-rows: 1
 
     * - Methods
-    * - :ref:`() <>`
+    * - :ref:`getId() <getIdStudio>`
+    * - :ref:`getName() <getNameStudio>`
 
 
 **Parameters:**
-    -  () - 
-    -  () - 
+    - id (`int <https://docs.python.org/3/library/functions.html#int>`_) - ID of the Anime Studio.
+    - name (`str <https://docs.python.org/3/library/stdtypes.html#str>`_) - Name of the Anime Studio.
 
 Methods
 ~~~~~~~
 
-.. method:: ()
-.. _:
+.. method:: getId()
+    :noindex:
+.. _getIdStudio:
 
-    
+    Studio ID.
 
     **Return type:**
-        ` <>`_
+        `int <https://docs.python.org/3/library/functions.html#int>`_
+
+.. method:: getName()
+    :noindex:
+.. _getNameStudio:
+
+    Studio name.
+
+    **Return type:**
+        `str <https://docs.python.org/3/library/stdtypes.html#str>`_
+
+Enumerations
+++++++++++++
