@@ -1,3 +1,5 @@
+[![Documentation Status](https://readthedocs.org/projects/myanimelistpy/badge/?version=latest)](https://myanimelistpy.readthedocs.io/en/latest/?badge=latest)
+[![Codecov](https://img.shields.io/codecov/c/gh/AllanCapistrano/myanimelistpy?logo=codecov)](https://app.codecov.io/gh/AllanCapistrano/myanimelistpy)
 # myanimelistpy
 
 <p align="center">
