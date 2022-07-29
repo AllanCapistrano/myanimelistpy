@@ -954,3 +954,308 @@ Methods
 
 Enumerations
 ++++++++++++
+
+The library provides some enumerations to avoid the API from being stringly 
+typed in case the strings change in the future.
+
+All enumerations are subclasses of `enum.Enum <https://docs.python.org/3/library/enum.html#enum.Enum>`_.
+
+.. warning:: 
+    The enumerations listed below are not intended to be used by users and are 
+    also read-only.
+
+AiringStatusEnum
+----------------
+.. _AiringStatusEnum:
+
+.. c:enum:: enums.airingStatusEnum.AiringStatusEnum
+
+.. list-table::
+    :widths: 10 10
+    :header-rows: 1
+
+    * - Key
+      - Value
+    * - finished_airing
+      - Finished airing
+    * - currently_airing
+      - Currently airing
+    * - not_yet_aired
+      - Not yet aired
+
+DayWeekEnum
+-----------
+.. _DayWeekEnum:
+
+.. c:enum:: enums.dayWeekEnum.DayWeekEnum
+
+.. list-table::
+    :widths: 10 10
+    :header-rows: 1
+
+    * - Key
+      - Value
+    * - sunday
+      - 0
+    * - monday
+      - 1
+    * - tuesday
+      - 2
+    * - wednesday
+      - 3
+    * - thursday
+      - 4
+    * - friday
+      - 5
+    * - saturday
+      - 6
+
+FieldsEnum
+----------
+.. _FieldsEnum:
+
+.. c:enum:: enums.fieldsEnum.FieldsEnum
+
+.. list-table::
+    :widths: 10 10 10 10
+    :header-rows: 1
+
+    * - Key
+      - Value
+      - Key
+      - Value
+    * - id
+      - 0
+      - media_type
+      - 16
+    * - title
+      - 1
+      - status
+      - 17
+    * - main_picture
+      - 2
+      - num_episodes
+      - 18
+    * - alternative_title
+      - 3
+      - start_season
+      - 19
+    * - start_date
+      - 4
+      - broadcast
+      - 20
+    * - end_date
+      - 5
+      - source
+      - 21
+    * - synopsis
+      - 6
+      - average_episode_duration
+      - 22
+    * - mean
+      - 7
+      - rating
+      - 23
+    * - rank
+      - 8
+      - studios
+      - 24
+    * - popularity
+      - 9
+      - pictures
+      - 25
+    * - num_list_users
+      - 10
+      - background
+      - 26
+    * - num_scoring_users
+      - 11
+      - related_anime
+      - 27
+    * - nsfw
+      - 12
+      - related_manga
+      - 28
+    * - genres
+      - 13
+      - recommendations
+      - 29
+    * - created_at
+      - 14
+      - statistics
+      - 30
+    * - updated_at
+      - 15
+      -
+      -
+
+.. note:: 
+    The keys ``pictures``, ``background``, ``related_anime``, ``related_manga``, 
+    ``recommendations``, and ``statistics`` cannot be in the **fields** parameter of
+    :ref:`getAnimeList() <getAnimeList>`, :ref:`getAnimeListInDict() <getAnimeListInDict>` and 
+    :ref:`getAnimeListInJSON() <getAnimeListInJSON>` methods.
+
+
+MediaTypeEnum
+-------------
+.. _MediaTypeEnum:
+
+.. c:enum:: enums.mediaTypeEnum.MediaTypeEnum
+
+.. list-table::
+    :widths: 10 10
+    :header-rows: 1
+
+    * - Key
+      - Value
+    * - unknown
+      - 0
+    * - tv
+      - 1
+    * - ova
+      - 2
+    * - movie
+      - 3
+    * - special
+      - 4
+    * - ona
+      - 5
+    * - music
+      - 6
+
+NsfwEnum
+--------
+.. _NsfwEnum:
+
+.. c:enum:: enums.nsfwEnum.NsfwEnum
+
+.. list-table::
+    :widths: 3 10
+    :header-rows: 1
+
+    * - Key
+      - Value
+    * - white
+      - This work is safe for work
+    * - gray
+      - This work may be not safe for work
+    * - black
+      - This work is not safe for work
+
+RatingEnum
+----------
+.. _RatingEnum:
+
+.. c:enum:: enums.ratingEnum.RatingEnum
+
+.. list-table::
+    :widths: 3 10
+    :header-rows: 1
+
+    * - Key
+      - Value
+    * - g
+      - All Age
+    * - pg
+      - Children
+    * - pg_13
+      - Teens 13 and Older
+    * - r
+      - 17+ (violence & profanity)
+    * - r_plus
+      - Profanity & Mild Nudity
+    * - rx
+      - Hentai
+
+RelationTypeEnum
+----------------
+.. _RelationTypeEnum:
+
+.. c:enum:: enums.relationTypeEnum.RelationTypeEnum
+
+.. list-table::
+    :widths: 10 10
+    :header-rows: 1
+
+    * - Key
+      - Value
+    * - sequel
+      - Sequel
+    * - prequel
+      - Prequel
+    * - alternative_setting
+      - Alternative Setting
+    * - alternative_version
+      - Alternative Version
+    * - side_story
+      - Side Story
+    * - parent_story
+      - Parent Story
+    * - summary
+      - Summary
+    * - full_story
+      - Full Story
+
+SeasonEnum
+----------
+.. _SeasonEnum:
+
+.. c:enum:: enums.seasonEnum.SeasonEnum
+
+.. list-table::
+    :widths: 10 10
+    :header-rows: 1
+
+    * - Key
+      - Value
+    * - winter
+      - Winter
+    * - spring
+      - Spring
+    * - summer
+      - Summer
+    * - fall
+      - Fall
+
+SourceEnum
+----------
+.. _SourceEnum:
+
+.. c:enum:: enums.sourceEnum.SourceEnum
+
+.. list-table::
+    :widths: 10 10
+    :header-rows: 1
+
+    * - Key
+      - Value
+    * - other
+      - Other
+    * - original
+      - Original
+    * - manga
+      - Manga
+    * - four_koma_manga
+      - 4 Koma manga
+    * - web_manga
+      - Web manga
+    * - digital_manga
+      - Digital manga
+    * - novel
+      - Novel
+    * - light_novel
+      - Light novel
+    * - visual_novel
+      - Visual novel
+    * - game
+      - Game
+    * - card_game
+      - Card game
+    * - book
+      - Book
+    * - picture_book
+      - Picture book
+    * - radio
+      - Radio
+    * - music
+      - Music
