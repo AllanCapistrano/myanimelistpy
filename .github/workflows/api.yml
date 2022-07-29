@@ -13,9 +13,9 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
       - name: Install setup requirements
-        run: pip install -r setup-requirements
+        run: pip install -r setup-requirements.txt
       - name: Install test requirements
-        run: pip install -r test-requirements
+        run: pip install -r test-requirements.txt
       - name: Run tests and collect coverage
         env:
             CLIENT_ID: ${{ secrets.CLIENT_ID }}
