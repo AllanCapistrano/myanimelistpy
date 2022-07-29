@@ -26,12 +26,13 @@ with open('README.md') as f:
 setup(
     name='myanimelistpy',
     packages=packages,
-    version='0.1.3',
+    version='0.1.4',
     description='A library to use the MyAnimeList API more easily.',
     long_description=readme,
     long_description_content_type="text/markdown",
     url='https://github.com/AllanCapistrano/myanimelistpy',
     project_urls={
+        "Documentation": "https://myanimelistpy.readthedocs.io/en/latest/",
         "Issue tracker": "https://github.com/AllanCapistrano/myanimelistpy/issues",
       },
     author='AllanCapistrano',
