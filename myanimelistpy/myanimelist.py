@@ -6,9 +6,10 @@ from .services.validateFields import validate_fields
 from .models.anime import Anime
 
 # ------------------------------ Constants ----------------------------------- #
-BASE_URL            = "https://api.myanimelist.net/v2"
-ANIME_LIST_ENDPOINT = "anime"
-AUTH_HEADER         = "X-MAL-CLIENT-ID"
+BASE_URL                   = "https://api.myanimelist.net/v2"
+ANIME_LIST_ENDPOINT        = "anime"
+AUTH_HEADER                = "X-MAL-CLIENT-ID"
+REQUEST_TIMEOUT_IN_SECONDS = 30
 # ---------------------------------------------------------------------------- #
 
 class MyAnimeList:
@@ -62,7 +63,8 @@ class MyAnimeList:
 
         response = requests.get(
             url     = url,
-            headers = {AUTH_HEADER: self.client_id}
+            headers = {AUTH_HEADER: self.client_id},
+            timeout = REQUEST_TIMEOUT_IN_SECONDS
         )
 
         temp: List[dict] = response.json()["data"]
