@@ -59,7 +59,7 @@ class MyAnimeList:
         url = f"{BASE_URL}/{ANIME_LIST_ENDPOINT}?q={anime_name}&limit={limit}&offset={offset}"
 
         if len(fields) > 0:
-            url += f"&fields={fields}"
+            url += f"&fields={','.join(fields)}"
 
         response = requests.get(
             url     = url,
