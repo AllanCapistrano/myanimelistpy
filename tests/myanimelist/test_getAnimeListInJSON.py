@@ -22,7 +22,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
         """ Check the type of objects in the anime list.
         """
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset
@@ -39,7 +39,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "alternative_titles",
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -57,7 +57,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "start_date",
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -75,7 +75,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "end_date"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -93,7 +93,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "synopsis"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -111,7 +111,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "mean"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -129,7 +129,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "rank"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -147,7 +147,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "popularity"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -165,7 +165,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "num_list_users"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -183,7 +183,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "num_scoring_users"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -201,7 +201,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "nsfw"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -219,7 +219,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "genres"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -237,7 +237,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "created_at"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -255,7 +255,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "updated_at"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -273,7 +273,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "media_type"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -291,7 +291,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "status"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -309,7 +309,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "num_episodes"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -327,7 +327,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "start_season"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -345,7 +345,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "broadcast"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -363,7 +363,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "source"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -381,7 +381,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "average_episode_duration"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -399,7 +399,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "rating"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -417,7 +417,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "studios"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -435,7 +435,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "pictures"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -453,7 +453,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "background"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -471,7 +471,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "related_anime"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -489,7 +489,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "related_manga"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -507,7 +507,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "recommendations"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -525,7 +525,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
             "statistics"
         ]
 
-        anime_list_in_json = self.my_anime_list.get_anime_List_in_json(
+        anime_list_in_json = self.my_anime_list.get_anime_list_in_json(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -541,7 +541,7 @@ class TestGetAnimeListInJSON(unittest.TestCase):
         fields = ["synopsis", "ranky"]
 
         with self.assertRaises(ValueError):
-            self.my_anime_list.get_anime_List_in_json(
+            self.my_anime_list.get_anime_list_in_json(
                 anime_name = self.anime_name, 
                 limit      = self.limit,
                 offset     = self.offset,

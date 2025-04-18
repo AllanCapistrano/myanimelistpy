@@ -114,7 +114,7 @@ class MyAnimeList:
 
         return animes
 
-    def get_anime_List_in_json(
+    def get_anime_list_in_json(
         self,
         anime_name: str,
         limit: int = 100,

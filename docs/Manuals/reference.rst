@@ -63,7 +63,7 @@ Methods
     **Return type:**
         `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_
 
-.. method:: get_anime_List_in_json(anime_name, limit = 100, offset = 0, fields = [])
+.. method:: get_anime_list_in_json(anime_name, limit = 100, offset = 0, fields = [])
 .. _getAnimeListInJSON:
 
     Returns a JSON stringified containing the list of anime by name.
@@ -1093,7 +1093,7 @@ FieldsEnum
     The keys ``pictures``, ``background``, ``related_anime``, ``related_manga``, 
     ``recommendations``, and ``statistics`` cannot be in the **fields** parameter of
     :ref:`get_anime_list() <getAnimeList>`, :ref:`get_anime_list_in_dict() <getAnimeListInDict>` and 
-    :ref:`get_anime_List_in_json() <getAnimeListInJSON>` methods.
+    :ref:`get_anime_list_in_json() <getAnimeListInJSON>` methods.
 
 
 MediaTypeEnum
