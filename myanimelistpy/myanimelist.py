@@ -66,7 +66,7 @@ class MyAnimeList:
 
         return temp
     
-    def getAnimeList(
+    def get_anime_list(
         self, 
         anime_name: str, 
         limit: int = 100, 

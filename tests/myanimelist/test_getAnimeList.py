@@ -23,7 +23,7 @@ class TestGetAnimeList(unittest.TestCase):
         """ Check the length of the anime list.
         """
         
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset
@@ -35,7 +35,7 @@ class TestGetAnimeList(unittest.TestCase):
         """ Check the type of objects in the anime list.
         """
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset
@@ -52,7 +52,7 @@ class TestGetAnimeList(unittest.TestCase):
             "alternative_titles",
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -86,7 +86,7 @@ class TestGetAnimeList(unittest.TestCase):
             "start_date",
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -110,7 +110,7 @@ class TestGetAnimeList(unittest.TestCase):
             "end_date"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -134,7 +134,7 @@ class TestGetAnimeList(unittest.TestCase):
             "synopsis"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -154,7 +154,7 @@ class TestGetAnimeList(unittest.TestCase):
             "mean"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -174,7 +174,7 @@ class TestGetAnimeList(unittest.TestCase):
             "rank"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -194,7 +194,7 @@ class TestGetAnimeList(unittest.TestCase):
             "popularity"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -214,7 +214,7 @@ class TestGetAnimeList(unittest.TestCase):
             "num_list_users"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -234,7 +234,7 @@ class TestGetAnimeList(unittest.TestCase):
             "num_scoring_users"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -254,7 +254,7 @@ class TestGetAnimeList(unittest.TestCase):
             "nsfw"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -278,7 +278,7 @@ class TestGetAnimeList(unittest.TestCase):
             "genres"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -308,7 +308,7 @@ class TestGetAnimeList(unittest.TestCase):
             "created_at"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -328,7 +328,7 @@ class TestGetAnimeList(unittest.TestCase):
             "updated_at"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -348,7 +348,7 @@ class TestGetAnimeList(unittest.TestCase):
             "media_type"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -368,7 +368,7 @@ class TestGetAnimeList(unittest.TestCase):
             "status"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -392,7 +392,7 @@ class TestGetAnimeList(unittest.TestCase):
             "num_episodes"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -412,7 +412,7 @@ class TestGetAnimeList(unittest.TestCase):
             "start_season"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -441,7 +441,7 @@ class TestGetAnimeList(unittest.TestCase):
             "broadcast"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -469,7 +469,7 @@ class TestGetAnimeList(unittest.TestCase):
             "broadcast"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -489,7 +489,7 @@ class TestGetAnimeList(unittest.TestCase):
             "source"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -509,7 +509,7 @@ class TestGetAnimeList(unittest.TestCase):
             "average_episode_duration"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -533,7 +533,7 @@ class TestGetAnimeList(unittest.TestCase):
             "rating"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -557,7 +557,7 @@ class TestGetAnimeList(unittest.TestCase):
             "studios"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -584,7 +584,7 @@ class TestGetAnimeList(unittest.TestCase):
             "pictures"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -604,7 +604,7 @@ class TestGetAnimeList(unittest.TestCase):
             "background"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -624,7 +624,7 @@ class TestGetAnimeList(unittest.TestCase):
             "related_anime"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -644,7 +644,7 @@ class TestGetAnimeList(unittest.TestCase):
             "related_manga"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -664,7 +664,7 @@ class TestGetAnimeList(unittest.TestCase):
             "recommendations"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -684,7 +684,7 @@ class TestGetAnimeList(unittest.TestCase):
             "statistics"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
@@ -702,7 +702,7 @@ class TestGetAnimeList(unittest.TestCase):
         fields = ["synopsis", "ranky"]
 
         with self.assertRaises(ValueError):
-            self.my_anime_list.getAnimeList(
+            self.my_anime_list.get_anime_list(
                 anime_name = self.anime_name, 
                 limit      = self.limit,
                 offset     = self.offset,

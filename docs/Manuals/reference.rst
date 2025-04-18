@@ -23,7 +23,7 @@ MyAnimeList
 Methods
 -------
 
-.. method:: getAnimeList(anime_name, limit = 100, offset = 0, fields = [])
+.. method:: get_anime_list(anime_name, limit = 100, offset = 0, fields = [])
 .. _getAnimeList:
 
     Returns a list of anime by name.
@@ -1092,7 +1092,7 @@ FieldsEnum
 .. note:: 
     The keys ``pictures``, ``background``, ``related_anime``, ``related_manga``, 
     ``recommendations``, and ``statistics`` cannot be in the **fields** parameter of
-    :ref:`getAnimeList() <getAnimeList>`, :ref:`get_anime_list_in_dict() <getAnimeListInDict>` and 
+    :ref:`get_anime_list() <getAnimeList>`, :ref:`get_anime_list_in_dict() <getAnimeListInDict>` and 
     :ref:`getAnimeListInJSON() <getAnimeListInJSON>` methods.
 
 

@@ -3,7 +3,7 @@ Anime List
 
 The sections below will show you how to get the anime list using different methods.
 
-``getAnimeList()``
+``get_anime_list()``
 ++++++++++++++++++
 
 Basic example
@@ -19,7 +19,7 @@ Basic example
     if __name__ == "__main__":
         my_anime_list = MyAnimeList(client_id=CLIENT_ID)
 
-        anime_list = my_anime_list.getAnimeList(
+        anime_list = my_anime_list.get_anime_list(
             anime_name = "Hunter x Hunter",
             limit      = 2
         )
@@ -54,7 +54,7 @@ Request with fields
     if __name__ == "__main__":
         my_anime_list = MyAnimeList(client_id=CLIENT_ID)
 
-        anime_list = my_anime_list.getAnimeList(
+        anime_list = my_anime_list.get_anime_list(
             anime_name = "Hunter x Hunter",
             limit      = 2,
             fields     = ["rank", "status"]
@@ -105,7 +105,7 @@ Request with fields
         if __name__ == "__main__":
             my_anime_list = MyAnimeList(client_id=CLIENT_ID)
 
-            anime_list = my_anime_list.getAnimeList(
+            anime_list = my_anime_list.get_anime_list(
                 anime_name = "Hunter x Hunter",
                 limit      = 2,
                 fields     = ["rank", "status"]
