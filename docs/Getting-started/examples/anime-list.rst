@@ -25,9 +25,9 @@ Basic example
         )
 
         for anime in anime_list:
-            print(f"Id: {anime.getId()}")
-            print(f"Title: {anime.getTitle()}")
-            print(f"Main Picture (medium): {anime.getMainPicture().getMedium()}\n")
+            print(f"Id: {anime.get_id()}")
+            print(f"Title: {anime.get_title()}")
+            print(f"Main Picture (medium): {anime.get_main_picture().get_medium()}\n")
 
 .. admonition:: Output
 
@@ -61,11 +61,11 @@ Request with fields
         )
 
         for anime in anime_list:
-            print(f"Id: {anime.getId()}")
-            print(f"Title: {anime.getTitle()}")
-            print(f"Main Picture (medium): {anime.getMainPicture().getMedium()}")
-            print(f"Rank: {anime.getRank()}")
-            print(f"Status: {anime.getStatus()}\n")
+            print(f"Id: {anime.get_id()}")
+            print(f"Title: {anime.get_title()}")
+            print(f"Main Picture (medium): {anime.get_main_picture().get_medium()}")
+            print(f"Rank: {anime.get_rank()}")
+            print(f"Status: {anime.get_status()}\n")
 
 .. admonition:: Output
 
@@ -112,11 +112,11 @@ Request with fields
             )
 
             for anime in anime_list:
-                print(f"Id: {anime.getId()}")
-                print(f"Title: {anime.getTitle()}")
-                print(f"Main Picture (medium): {anime.getMainPicture().getMedium()}")
-                print(f"Rank: {anime.getRank()}")
-                print(f"Status: {anime.getStatus()}\n")
+                print(f"Id: {anime.get_id()}")
+                print(f"Title: {anime.get_title()}")
+                print(f"Main Picture (medium): {anime.get_main_picture().get_medium()}")
+                print(f"Rank: {anime.get_rank()}")
+                print(f"Status: {anime.get_status()}\n")
 
     All the next examples will using the `python-dotenv <https://pypi.org/project/python-dotenv/>`_ 
     library, but feel free not to use it if you don't want to.

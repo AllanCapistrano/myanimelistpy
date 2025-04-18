@@ -18,8 +18,8 @@ class AlternativeTitles:
         self.__synonyms = synonyms
         self.__english  = english
         self.__japanese = japanese
-        
-    def getSynonyms(self) -> List[str]:
+
+    def get_synonyms(self) -> List[str]:
         """ List of synonyms.
 
         Returns
@@ -29,7 +29,7 @@ class AlternativeTitles:
 
         return self.__synonyms
 
-    def getEnglish(self) -> str:
+    def get_english(self) -> str:
         """ English version.
         
         Returns
@@ -39,7 +39,7 @@ class AlternativeTitles:
 
         return self.__english
 
-    def getJapanese(self) -> str:
+    def get_japanese(self) -> str:
         """ Japanese version.
         
         Returns

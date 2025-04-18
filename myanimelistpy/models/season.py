@@ -11,11 +11,11 @@ class Season:
         season: :class:`SeasonEnum`
             Anime release season.
         """
-        
+
         self.__year = year
         self.__season = season
 
-    def getYear(self) -> int:
+    def get_year(self) -> int:
         """ Year of season.
 
         Returns
@@ -25,7 +25,7 @@ class Season:
 
         return self.__year
 
-    def getSeason(self) -> str:
+    def get_season(self) -> str:
         """ Season name.
 
         Returns

@@ -1,10 +1,10 @@
 from .picture import Picture
 
 class Node:
-    def __init__(self, 
+    def __init__(self,
         id: int,
-        title: str, 
-        main_picture: dict, 
+        title: str,
+        main_picture: dict,
     ) -> None:
         """ Constructor
 
@@ -21,36 +21,36 @@ class Node:
         self.__id           = id
         self.__title        = title
         self.__main_picture = Picture(
-            large  = main_picture["large"], 
+            large  = main_picture["large"],
             medium = main_picture["medium"]
         )
 
-    def getId(self) -> int:
+    def get_id(self) -> int:
         """ Anime or manga ID.
 
         Returns
         -----------
         :class:`int`
         """
-        
+
         return self.__id
 
-    def getTitle(self) -> str:
+    def get_title(self) -> str:
         """ Anime or manga ID.
 
         Returns
         -----------
         :class:`int`
         """
-        
+
         return self.__title
 
-    def getMainPicture(self) -> Picture:
+    def get_main_picture(self) -> Picture:
         """ Anime or manga main picture.
 
         Returns
         -----------
         :class:`int`
         """
-        
+
         return self.__main_picture

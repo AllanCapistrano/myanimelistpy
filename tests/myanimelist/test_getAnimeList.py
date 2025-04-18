@@ -63,17 +63,17 @@ class TestGetAnimeList(unittest.TestCase):
 
         self.assertEqual(
             ["HxH (2011)"],
-            anime.getAlternativeTitle().getSynonyms(),
+            anime.get_alternative_title().get_synonyms(),
             "Should be a list of synonyms with 'HxH (2011)' as the first element."
         )
         self.assertEqual(
             "Hunter x Hunter",
-            anime.getAlternativeTitle().getEnglish(),
+            anime.get_alternative_title().get_english(),
             "Should be 'Hunter x Hunter'."
         )
         self.assertEqual(
             "HUNTER×HUNTER（ハンター×ハンター）",
-            anime.getAlternativeTitle().getJapanese(),
+            anime.get_alternative_title().get_japanese(),
             "Should be 'HUNTER×HUNTER（ハンター×ハンター）'."
         )
 
@@ -97,7 +97,7 @@ class TestGetAnimeList(unittest.TestCase):
         
         self.assertEqual(
             "2011-10-02", 
-            anime.getStartDate(), 
+            anime.get_start_date(), 
             "Should be 2011-10-02."
         )
     
@@ -121,7 +121,7 @@ class TestGetAnimeList(unittest.TestCase):
         
         self.assertEqual(
             "2014-09-24", 
-            anime.getEndDate(), 
+            anime.get_end_date(), 
             "Should be 2014-09-24."
         )
     
@@ -143,7 +143,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertIn("Hunters devote themselves to", anime.getSynopsis())
+        self.assertIn("Hunters devote themselves to", anime.get_synopsis())
         
     def test_getAnimeList_mean_field(self):
         """ Check if the 'mean' field used for the request are 
@@ -163,7 +163,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertIsInstance(anime.getMean(), float)
+        self.assertIsInstance(anime.get_mean_score(), float)
 
     def test_getAnimeList_rank_field(self):
         """ Check if the 'rank' field used for the request are 
@@ -183,7 +183,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertIsInstance(anime.getRank(), int)
+        self.assertIsInstance(anime.get_rank(), int)
 
     def test_getAnimeList_popularity_field(self):
         """ Check if the 'popularity' field used for the request are 
@@ -203,7 +203,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertIsInstance(anime.getPopularity(), int)
+        self.assertIsInstance(anime.get_popularity(), int)
     
     def test_getAnimeList_num_list_users_field(self):
         """ Check if the 'num_list_users' field used for the request are 
@@ -223,7 +223,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertIsInstance(anime.getNumUserList(), int)
+        self.assertIsInstance(anime.get_num_user_list(), int)
     
     def test_getAnimeList_num_scoring_users_field(self):
         """ Check if the 'num_scoring_users' field used for the request are 
@@ -243,7 +243,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertIsInstance(anime.getNumScoringUsers(), int)
+        self.assertIsInstance(anime.get_num_scoring_users(), int)
     
     def test_getAnimeList_nsfw_field(self):
         """ Check if the 'nsfw' field used for the request are 
@@ -265,7 +265,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         self.assertEqual(
             "This work is safe for work", 
-            anime.getNsfwClassification(),
+            anime.get_nsfw_classification(),
             "Should be 'This work is safe for work'."
         )
     
@@ -287,15 +287,15 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
 
-        self.assertGreater(len(anime.getGenres()), 0)
+        self.assertGreater(len(anime.get_genres()), 0)
 
-        self.assertIsInstance(anime.getGenres()[0].getId(), int)
-        self.assertIsInstance(anime.getGenres()[0].getName(), str)
+        self.assertIsInstance(anime.get_genres()[0].get_id(), int)
+        self.assertIsInstance(anime.get_genres()[0].get_name(), str)
 
-        self.assertEqual(1, anime.getGenres()[0].getId(), "Should be 1.")
+        self.assertEqual(1, anime.get_genres()[0].get_id(), "Should be 1.")
         self.assertEqual(
             "Action", 
-            anime.getGenres()[0].getName(), 
+            anime.get_genres()[0].get_name(), 
             "Should be 'Action'."
         )
 
@@ -317,7 +317,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertIsInstance(anime.getCreatedAt(), str)
+        self.assertIsInstance(anime.get_created_at(), str)
     
     def test_getAnimeList_updated_at_field(self):
         """ Check if the 'updated_at' field used for the request are 
@@ -337,7 +337,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertIsInstance(anime.getUpdatedAt(), str)
+        self.assertIsInstance(anime.get_updated_at(), str)
     
     def test_getAnimeList_media_type_field(self):
         """ Check if the 'media_type' field used for the request are 
@@ -357,7 +357,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertEqual("tv", anime.getMediaType(), "Should be 'tv'.")
+        self.assertEqual("tv", anime.get_media_type(), "Should be 'tv'.")
     
     def test_getAnimeList_status_field(self):
         """ Check if the 'status' field used for the request are 
@@ -379,7 +379,7 @@ class TestGetAnimeList(unittest.TestCase):
         
         self.assertEqual(
             "Finished airing", 
-            anime.getStatus(), 
+            anime.get_status(), 
             "Should be 'Finished airing'."
         )
     
@@ -401,7 +401,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertIsInstance(anime.getNumEpisodes(), int)
+        self.assertIsInstance(anime.get_num_episodes(), int)
     
     def test_getAnimeList_start_season_field(self):
         """ Check if the 'start_season' field used for the request are 
@@ -423,12 +423,12 @@ class TestGetAnimeList(unittest.TestCase):
         
         self.assertEqual(
             "Fall", 
-            anime.getStartSeason().getSeason(), 
+            anime.get_start_season().get_season(), 
             "Should be 'Fall'."
         )
         self.assertEqual(
             2011, 
-            anime.getStartSeason().getYear(), 
+            anime.get_start_season().get_year(), 
             "Should be 2011."
         )
     
@@ -452,12 +452,12 @@ class TestGetAnimeList(unittest.TestCase):
         
         self.assertEqual(
             "sunday", 
-            anime.getBroadcast().getDayOfTheWeek(), 
+            anime.get_broadcast().get_day_of_the_week(), 
             "Should be 'sunday'.",
         )
         self.assertEqual(
             "10:55", 
-            anime.getBroadcast().getStartTime(), 
+            anime.get_broadcast().get_start_time(), 
             "Should be '10:55'.",
         )
     
@@ -478,7 +478,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[3]
         
-        self.assertIsNone(anime.getBroadcast())
+        self.assertIsNone(anime.get_broadcast())
     
     def test_getAnimeList_source_field(self):
         """ Check if the 'source' field used for the request are 
@@ -498,7 +498,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertEqual("Manga", anime.getSource(), "Should be 'Manga'.")
+        self.assertEqual("Manga", anime.get_source(), "Should be 'Manga'.")
     
     def test_getAnimeList_average_episode_duration_field(self):
         """ Check if the 'average_episode_duration' field used for the request are 
@@ -520,7 +520,7 @@ class TestGetAnimeList(unittest.TestCase):
         
         self.assertEqual(
             1417, 
-            anime.getAvgEpisodeDurationInSeconds(), 
+            anime.get_avg_episode_duration_in_seconds(), 
             "Should be 1417."
         )
     
@@ -544,7 +544,7 @@ class TestGetAnimeList(unittest.TestCase):
         
         self.assertEqual(
             "Teens 13 and Older", 
-            anime.getRating(), 
+            anime.get_rating(), 
             "Should be 'Teens 13 and Older'."
         )
     
@@ -566,12 +566,12 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
         
-        self.assertGreater(len(anime.getStudios()), 0)
+        self.assertGreater(len(anime.get_studios()), 0)
 
-        self.assertEqual(11, anime.getStudios()[0].getId(), "Should be 11.")
+        self.assertEqual(11, anime.get_studios()[0].get_id(), "Should be 11.")
         self.assertEqual(
             "Madhouse", 
-            anime.getStudios()[0].getName(), 
+            anime.get_studios()[0].get_name(), 
             "Should be 'Madhouse'."
         )
     
@@ -593,7 +593,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
 
-        self.assertIsNone(anime.getPictures())
+        self.assertIsNone(anime.get_pictures())
     
     def test_getAnimeList_background_field(self):
         """ Check if the 'background' field used for the request are 
@@ -613,7 +613,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
 
-        self.assertIsNone(anime.getBackground())
+        self.assertIsNone(anime.get_background())
     
     def test_getAnimeList_related_anime_field(self):
         """ Check if the 'related_anime' field used for the request are 
@@ -633,7 +633,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
 
-        self.assertIsNone(anime.getRelatedAnimes())
+        self.assertIsNone(anime.get_related_animes())
     
     def test_getAnimeList_related_manga_field(self):
         """ Check if the 'related_manga' field used for the request are 
@@ -653,7 +653,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
 
-        self.assertIsNone(anime.getRelatedMangas())
+        self.assertIsNone(anime.get_related_mangas())
     
     def test_getAnimeList_recommendations_field(self):
         """ Check if the 'recommendations' field used for the request are 
@@ -673,7 +673,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
 
-        self.assertIsNone(anime.getRecommendations())
+        self.assertIsNone(anime.get_recommendations())
     
     def test_getAnimeList_statistics_field(self):
         """ Check if the 'statistics' field used for the request are 
@@ -693,7 +693,7 @@ class TestGetAnimeList(unittest.TestCase):
 
         anime: Anime = anime_list[0]
 
-        self.assertIsNone(anime.getStatistics())
+        self.assertIsNone(anime.get_statistics())
 
     def test_getAnimeList_invalid_field(self):
         """ Check if invalid fields will throw an exception.

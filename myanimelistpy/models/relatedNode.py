@@ -4,7 +4,7 @@ from ..enums.relationTypeEnum import RelationTypeEnum
 
 class RelatedNode(Node):
     def __init__(
-        self, 
+        self,
         id: int,
         title: str,
         main_picture: Picture,
@@ -25,10 +25,10 @@ class RelatedNode(Node):
         """
 
         super().__init__(id, title, main_picture)
-        
+
         self.__relation_type = relation_type
 
-    def getRelationType(self) -> str:
+    def get_relation_type(self) -> str:
         """ Anime or manga relation type.
 
         Returns
