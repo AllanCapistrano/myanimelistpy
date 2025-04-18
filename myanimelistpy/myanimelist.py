@@ -2,7 +2,7 @@ import requests
 from typing import List
 from json import dumps
 
-from .services.validateFields import validateFields
+from .services.validateFields import validate_fields
 from .models.anime import Anime
 
 # ------------------------------ Constants ----------------------------------- #
@@ -29,7 +29,7 @@ class MyAnimeList:
         anime_name: str, 
         limit: int = 100, 
         offset: int = 0,
-        fields: List[str] = []
+        fields: List[str] = None
     ) -> dict:
         """ Returns a list of dictionaries containing the anime by name.
 
@@ -49,6 +49,9 @@ class MyAnimeList:
         -----------
         animes: :class:`dict`
         """
+
+        if fields is None:
+            fields = []
 
         validate_fields(fields=fields)
 
@@ -71,7 +74,7 @@ class MyAnimeList:
         anime_name: str, 
         limit: int = 100, 
         offset: int = 0,
-        fields: List[str] = []
+        fields: List[str] = None
     ) -> List[Anime]:
         """ Returns a list of anime by name.
 
@@ -91,6 +94,9 @@ class MyAnimeList:
         -----------
         animes: :class:`List[Anime]`
         """
+
+        if fields is None:
+            fields = []
 
         responseJson: dict = self.get_anime_list_in_dict(
             anime_name = anime_name,
@@ -113,7 +119,7 @@ class MyAnimeList:
         anime_name: str, 
         limit: int = 100, 
         offset: int = 0,
-        fields: List[str] = []
+        fields: List[str] = None
     ) -> str:
         """ Returns a JSON stringified containing the list of anime by name.
 
@@ -133,6 +139,9 @@ class MyAnimeList:
         -----------
         animes: :class:`str`
         """
+
+        if fields is None:
+            fields = []
 
         responseJson: dict = self.get_anime_list_in_dict(
             anime_name = anime_name,
