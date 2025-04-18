@@ -109,10 +109,8 @@ class MyAnimeList:
 
         animes: List[Anime] = []
 
-        for index in range(len(response_json)):
-            animes.append(
-                Anime(node=response_json[index]["node"], fields=fields)
-            )
+        for item in response_json:
+            animes.append(Anime(node=item["node"], fields=fields))
 
         return animes
 
