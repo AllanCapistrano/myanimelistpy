@@ -43,7 +43,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Anime <anime>`]
 
-.. method:: getAnimeListInDict(anime_name, limit = 100, offset = 0, fields = [])
+.. method:: get_anime_list_in_dict(anime_name, limit = 100, offset = 0, fields = [])
 .. _getAnimeListInDict:
 
     Returns a list of dictionaries containing the anime by name.
@@ -1092,7 +1092,7 @@ FieldsEnum
 .. note:: 
     The keys ``pictures``, ``background``, ``related_anime``, ``related_manga``, 
     ``recommendations``, and ``statistics`` cannot be in the **fields** parameter of
-    :ref:`getAnimeList() <getAnimeList>`, :ref:`getAnimeListInDict() <getAnimeListInDict>` and 
+    :ref:`getAnimeList() <getAnimeList>`, :ref:`get_anime_list_in_dict() <getAnimeListInDict>` and 
     :ref:`getAnimeListInJSON() <getAnimeListInJSON>` methods.
 
 

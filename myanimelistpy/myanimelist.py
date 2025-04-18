@@ -24,7 +24,7 @@ class MyAnimeList:
         self.client_id = client_id
         self.base_url  =  BASE_URL
 
-    def getAnimeListInDict(
+    def get_anime_list_in_dict(
         self, 
         anime_name: str, 
         limit: int = 100, 
@@ -92,7 +92,7 @@ class MyAnimeList:
         animes: :class:`List[Anime]`
         """
 
-        responseJson: dict = self.getAnimeListInDict(
+        responseJson: dict = self.get_anime_list_in_dict(
             anime_name = anime_name,
             limit      = limit,
             offset     = offset,
@@ -134,7 +134,7 @@ class MyAnimeList:
         animes: :class:`str`
         """
 
-        responseJson: dict = self.getAnimeListInDict(
+        responseJson: dict = self.get_anime_list_in_dict(
             anime_name = anime_name,
             limit      = limit,
             offset     = offset,

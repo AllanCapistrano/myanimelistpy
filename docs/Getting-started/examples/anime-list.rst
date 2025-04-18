@@ -121,7 +121,7 @@ Request with fields
     All the next examples will using the `python-dotenv <https://pypi.org/project/python-dotenv/>`_ 
     library, but feel free not to use it if you don't want to.
 
-``getAnimeListInDict()``
+``get_anime_list_in_dict()``
 ++++++++++++++++++++++++
 
 .. code-block:: python3
@@ -139,7 +139,7 @@ Request with fields
     if __name__ == "__main__":
         my_anime_list = MyAnimeList(client_id=CLIENT_ID)
 
-        anime_list = my_anime_list.getAnimeListInDict(
+        anime_list = my_anime_list.get_anime_list_in_dict(
             anime_name = "Hunter x Hunter",
             limit      = 2,
             fields     = ["genres"]
