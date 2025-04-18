@@ -177,7 +177,7 @@ Request with fields
             Title: Hunter x Hunter
             Genres: [{'id': 1, 'name': 'Action'}, {'id': 2, 'name': 'Adventure'}, {'id': 10, 'name': 'Fantasy'}, {'id': 27, 'name': 'Shounen'}]
 
-``getAnimeListInJSON()``
+``get_anime_List_in_json()``
 ++++++++++++++++++++++++
 
 .. code-block:: python3
@@ -195,7 +195,7 @@ Request with fields
     if __name__ == "__main__":
         my_anime_list = MyAnimeList(client_id=CLIENT_ID)
 
-        anime_list = my_anime_list.getAnimeListInJSON(
+        anime_list = my_anime_list.get_anime_List_in_json(
             anime_name = "Hunter x Hunter",
             limit      = 2,
             fields     = ["num_episodes"]
