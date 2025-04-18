@@ -98,7 +98,7 @@ class MyAnimeList:
         if fields is None:
             fields = []
 
-        responseJson: dict = self.get_anime_list_in_dict(
+        response_json: dict = self.get_anime_list_in_dict(
             anime_name = anime_name,
             limit      = limit,
             offset     = offset,
@@ -107,9 +107,9 @@ class MyAnimeList:
 
         animes: List[Anime] = []
 
-        for index in range(len(responseJson)):
+        for index in range(len(response_json)):
             animes.append(
-                Anime(node=responseJson[index]["node"], fields=fields)
+                Anime(node=response_json[index]["node"], fields=fields)
             )
 
         return animes
@@ -143,11 +143,11 @@ class MyAnimeList:
         if fields is None:
             fields = []
 
-        responseJson: dict = self.get_anime_list_in_dict(
+        response_json: dict = self.get_anime_list_in_dict(
             anime_name = anime_name,
             limit      = limit,
             offset     = offset,
             fields     = fields,
         )
 
-        return '{"data":' + dumps(responseJson) + '}'
+        return '{"data":' + dumps(response_json) + '}'
