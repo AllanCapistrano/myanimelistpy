@@ -50,7 +50,7 @@ class MyAnimeList:
         animes: :class:`dict`
         """
 
-        validateFields(fields=fields)
+        validate_fields(fields=fields)
 
         url = f"{BASE_URL}/{ANIME_LIST_ENDPOINT}?q={anime_name}&limit={limit}&offset={offset}"
 

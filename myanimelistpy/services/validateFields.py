@@ -2,7 +2,7 @@ from typing import List
 
 from ..enums.fieldsEnum import FieldsEnum
 
-def validateFields(fields: List[str]) -> bool:
+def validate_fields(fields: List[str]) -> bool:
     """ Validate the fields provided.
 
     Parameters

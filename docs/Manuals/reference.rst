@@ -95,7 +95,7 @@ Services that are used in the library.
     * - Methods
     * - :ref:`validateFields <validatefields>`
 
-.. method:: services.validateFields(fields)
+.. method:: services.validate_fields(fields)
 .. _validateFields:
 
     Validate the fields provided.
