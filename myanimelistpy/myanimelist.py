@@ -20,14 +20,14 @@ class MyAnimeList:
         client_id: :class:`str`
             MyAnimeList Client ID.
         """
-        
+
         self.client_id = client_id
         self.base_url  =  BASE_URL
 
     def get_anime_list_in_dict(
-        self, 
-        anime_name: str, 
-        limit: int = 100, 
+        self,
+        anime_name: str,
+        limit: int = 100,
         offset: int = 0,
         fields: List[str] = None
     ) -> dict:
@@ -57,7 +57,7 @@ class MyAnimeList:
 
         url = f"{BASE_URL}/{ANIME_LIST_ENDPOINT}?q={anime_name}&limit={limit}&offset={offset}"
 
-        if(len(fields) > 0):
+        if len(fields) > 0:
             url += f"&fields={fields}"
 
         response = requests.get(
@@ -68,11 +68,11 @@ class MyAnimeList:
         temp: List[dict] = response.json()["data"]
 
         return temp
-    
+
     def get_anime_list(
-        self, 
-        anime_name: str, 
-        limit: int = 100, 
+        self,
+        anime_name: str,
+        limit: int = 100,
         offset: int = 0,
         fields: List[str] = None
     ) -> List[Anime]:
@@ -115,9 +115,9 @@ class MyAnimeList:
         return animes
 
     def get_anime_List_in_json(
-        self, 
-        anime_name: str, 
-        limit: int = 100, 
+        self,
+        anime_name: str,
+        limit: int = 100,
         offset: int = 0,
         fields: List[str] = None
     ) -> str:
