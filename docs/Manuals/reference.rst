@@ -23,7 +23,7 @@ MyAnimeList
 Methods
 -------
 
-.. method:: get_anime_list(anime_name, limit = 100, offset = 0, fields = [])
+.. method:: get_anime_list(anime_name, limit = 100, offset = 0, fields = None)
 .. _getAnimeList:
 
     Returns a list of anime by name.
@@ -43,7 +43,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Anime <anime>`]
 
-.. method:: get_anime_list_in_dict(anime_name, limit = 100, offset = 0, fields = [])
+.. method:: get_anime_list_in_dict(anime_name, limit = 100, offset = 0, fields = None)
 .. _getAnimeListInDict:
 
     Returns a list of dictionaries containing the anime by name.
@@ -63,7 +63,7 @@ Methods
     **Return type:**
         `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_
 
-.. method:: get_anime_list_in_json(anime_name, limit = 100, offset = 0, fields = [])
+.. method:: get_anime_list_in_json(anime_name, limit = 100, offset = 0, fields = None)
 .. _getAnimeListInJSON:
 
     Returns a JSON stringified containing the list of anime by name.
