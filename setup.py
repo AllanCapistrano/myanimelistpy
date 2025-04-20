@@ -22,7 +22,7 @@ with open('README.md') as f:
 setup(
     name='myanimelistpy',
     packages=packages,
-    version='0.1.4',
+    version='0.1.5',
     description='A library to use the MyAnimeList API more easily.',
     long_description=readme,
     long_description_content_type="text/markdown",
@@ -38,12 +38,12 @@ setup(
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
-		"Programming Language :: Python :: 3.10",
+		"Programming Language :: Python :: 3.13",
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
 	],
-    python_requires='>=3.10.0',
+    python_requires='>=3.13.0',
     install_requires=requirements,
     setup_requires=setup_requirements,
 )
