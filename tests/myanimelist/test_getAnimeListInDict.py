@@ -478,8 +478,7 @@ class TestGetAnimeListInDict(unittest.TestCase):
 
         anime: dict = anime_list[3]
 
-        with self.assertRaises(KeyError):
-            anime["broadcast"]
+        self.assertNotIn("broadcast", anime)
 
     def test_get_anime_list_in_dict_source_field(self):
         """ Check if the 'source' field used for the request are 
@@ -520,7 +519,7 @@ class TestGetAnimeListInDict(unittest.TestCase):
         anime: dict = anime_list[0]["node"]
 
         self.assertEqual(
-            1417, 
+            1417,
             anime["average_episode_duration"],
             "Should be 1417."
         )
@@ -594,8 +593,7 @@ class TestGetAnimeListInDict(unittest.TestCase):
 
         anime: dict = anime_list[0]["node"]
 
-        with self.assertRaises(KeyError):
-            anime["pictures"]
+        self.assertNotIn("pictures", anime)
 
     def test_get_anime_list_in_dict_background_field(self):
         """ Check if the 'background' field used for the request are 
@@ -615,8 +613,7 @@ class TestGetAnimeListInDict(unittest.TestCase):
 
         anime: dict = anime_list[0]["node"]
 
-        with self.assertRaises(KeyError):
-            anime["background"]
+        self.assertNotIn("background", anime)
 
     def test_get_anime_list_in_dict_related_anime_field(self):
         """ Check if the 'related_anime' field used for the request are 
@@ -636,8 +633,7 @@ class TestGetAnimeListInDict(unittest.TestCase):
 
         anime: dict = anime_list[0]["node"]
 
-        with self.assertRaises(KeyError):
-            anime["related_anime"]
+        self.assertNotIn("related_anime", anime)
 
     def test_get_anime_list_in_dict_related_manga_field(self):
         """ Check if the 'related_manga' field used for the request are 
@@ -657,8 +653,7 @@ class TestGetAnimeListInDict(unittest.TestCase):
 
         anime: dict = anime_list[0]["node"]
 
-        with self.assertRaises(KeyError):
-            anime["related_manga"]
+        self.assertNotIn("related_manga", anime)
 
     def test_get_anime_list_in_dict_recommendations_field(self):
         """ Check if the 'recommendations' field used for the request are 
@@ -678,8 +673,7 @@ class TestGetAnimeListInDict(unittest.TestCase):
 
         anime: dict = anime_list[0]["node"]
 
-        with self.assertRaises(KeyError):
-            anime["recommendations"]
+        self.assertNotIn("recommendations", anime)
 
     def test_get_anime_list_in_dict_statistics_field(self):
         """ Check if the 'statistics' field used for the request are 
@@ -699,8 +693,7 @@ class TestGetAnimeListInDict(unittest.TestCase):
 
         anime: dict = anime_list[0]["node"]
 
-        with self.assertRaises(KeyError):
-            anime["statistics"]
+        self.assertNotIn("statistics", anime)
 
     def test_get_anime_list_in_dict_invalid_field(self):
         """ Check if invalid fields will throw an exception.
