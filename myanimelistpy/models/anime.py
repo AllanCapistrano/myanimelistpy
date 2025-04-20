@@ -71,9 +71,9 @@ class Anime(Node):
         self.__recommendations          = None # Cannot contain this field in a list.
         self.__statistics               = None # Cannot contain this field in a list.
 
-        self.__setFields(node=node, fields=fields)
+        self.__set_fields(node=node, fields=fields)
 
-    def __setFields(self, node: dict, fields: List[str]) -> None:
+    def __set_fields(self, node: dict, fields: List[str]) -> None:
         """ Set the class attributes values using the fields.
 
         Parameters
@@ -260,7 +260,7 @@ class Anime(Node):
                             related_anime: dict = node_related_anime["node"]
                             main_picture: dict  = related_anime["main_picture"]
                             relation_type: str  = related_anime["relation_type"]
-                            
+
                             related_animes.append(
                                 RelatedNode(
                                     id           = related_anime["id"],
@@ -274,7 +274,7 @@ class Anime(Node):
                                     ]
                                 )
                             )
-                        
+
                         self.__related_anime: List[RelatedNode] = related_animes
                     except:
                         self.__related_anime = None
@@ -289,7 +289,7 @@ class Anime(Node):
                             related_manga: dict = node_related_manga["node"]
                             main_picture: dict  = related_manga["main_picture"]
                             relation_type: str  = related_manga["relation_type"]
-                            
+
                             related_mangas.append(
                                 RelatedNode(
                                     id           = related_manga["id"],
@@ -357,7 +357,7 @@ class Anime(Node):
 
                     pass
 
-    def getAlternativeTitle(self) -> AlternativeTitles:
+    def get_alternative_title(self) -> AlternativeTitles:
         """ The alternative title of the anime.
 
         Returns
@@ -367,7 +367,7 @@ class Anime(Node):
 
         return self.__alternative_titles
 
-    def getStartDate(self) -> str:
+    def get_start_date(self) -> str:
         """ The anime start date. Format `YYYY-mm-dd`.
 
         Returns
@@ -377,47 +377,47 @@ class Anime(Node):
 
         return self.__start_date
 
-    def getEndDate(self) -> str:
+    def get_end_date(self) -> str:
         """ The anime end date. Format `YYYY-mm-dd`.
 
         Returns
         -----------
         :class:`str`
         """
-        
+
         return self.__end_date
 
-    def getSynopsis(self) -> str:
+    def get_synopsis(self) -> str:
         """ Anime synopsis.
 
         Returns
         -----------
         :class:`str`
         """
-        
+
         return self.__synopsis
 
-    def getMean(self) -> float:
+    def get_mean_score(self) -> float:
         """ Mean score.
 
         Returns
         -----------
         :class:`float`
         """
-        
+
         return self.__mean
 
-    def getRank(self) -> int:
+    def get_rank(self) -> int:
         """ Anime rank.
 
         Returns
         -----------
         :class:`int`
         """
-        
+
         return self.__rank
 
-    def getPopularity(self) -> int:
+    def get_popularity(self) -> int:
         """ Anime popularity.
 
         Returns
@@ -427,7 +427,7 @@ class Anime(Node):
 
         return self.__popularity
 
-    def getNumUserList(self) -> int:
+    def get_num_user_list(self) -> int:
         """ The number of users who have the anime in their list.
 
         Returns
@@ -437,17 +437,17 @@ class Anime(Node):
 
         return self.__num_list_users
 
-    def getNumScoringUsers(self) -> int:
+    def get_num_scoring_users(self) -> int:
         """ The number of users who rated the anime.
 
         Returns
         -----------
         :class:`int`
         """
-        
+
         return self.__num_scoring_users
 
-    def getNsfwClassification(self) -> str:
+    def get_nsfw_classification(self) -> str:
         """ Anime NSFW classification.
 
         Returns
@@ -457,7 +457,7 @@ class Anime(Node):
 
         return self.__nsfw.value
 
-    def getGenres(self) -> List[Genre]:
+    def get_genres(self) -> List[Genre]:
         """ The list of anime genres.
 
         Returns
@@ -467,7 +467,7 @@ class Anime(Node):
 
         return self.__genres
 
-    def getCreatedAt(self) -> str:
+    def get_created_at(self) -> str:
         """ Timestamp of anime creation in MyAnimeList database.
 
         Returns
@@ -477,7 +477,7 @@ class Anime(Node):
 
         return self.__created_at
 
-    def getUpdatedAt(self) -> str:
+    def get_updated_at(self) -> str:
         """ Timestamp of anime update in MyAnimeList database.
 
         Returns
@@ -487,7 +487,7 @@ class Anime(Node):
 
         return self.__updated_at
 
-    def getMediaType(self) -> str:
+    def get_media_type(self) -> str:
         """ Anime media type.
 
         Returns
@@ -497,7 +497,7 @@ class Anime(Node):
 
         return self.__media_type
 
-    def getStatus(self) -> str:
+    def get_status(self) -> str:
         """ Airing status.
 
         Returns
@@ -507,7 +507,7 @@ class Anime(Node):
 
         return self.__status
 
-    def getNumEpisodes(self) -> int:
+    def get_num_episodes(self) -> int:
         """ The total number of episodes of this series. If unknown, it is 0.
 
         Returns
@@ -517,7 +517,7 @@ class Anime(Node):
 
         return self.__num_episodes
 
-    def getStartSeason(self) -> Season:
+    def get_start_season(self) -> Season:
         """ Anime start season.
 
         Returns
@@ -527,7 +527,7 @@ class Anime(Node):
 
         return self.__start_season
 
-    def getBroadcast(self) -> Broadcast | None:
+    def get_broadcast(self) -> Broadcast | None:
         """ Broadcast day of the week and start time (JST).
 
         Returns
@@ -537,7 +537,7 @@ class Anime(Node):
 
         return self.__broadcast
 
-    def getSource(self) -> str:
+    def get_source(self) -> str:
         """ Original work.
 
         Returns
@@ -547,7 +547,7 @@ class Anime(Node):
 
         return self.__source.value
 
-    def getAvgEpisodeDurationInSeconds(self) -> int:
+    def get_avg_episode_duration_in_seconds(self) -> int:
         """ Average length of episode in seconds.
 
         Returns
@@ -557,7 +557,7 @@ class Anime(Node):
 
         return self.__average_episode_duration
 
-    def getRating(self) -> str:
+    def get_rating(self) -> str:
         """ Anime rating.
 
         Returns
@@ -567,7 +567,7 @@ class Anime(Node):
 
         return self.__rating.value
 
-    def getStudios(self) -> List[Studio]:
+    def get_studios(self) -> List[Studio]:
         """ List of studios that produced the anime.
 
         Returns
@@ -577,7 +577,7 @@ class Anime(Node):
 
         return self.__studios
 
-    def getPictures(self) -> List[Picture] | None:
+    def get_pictures(self) -> List[Picture] | None:
         """ List of anime pictures.
 
         You cannot contain this field in a list.
@@ -589,7 +589,7 @@ class Anime(Node):
 
         return self.__pictures
 
-    def getBackground(self) -> str | None:
+    def get_background(self) -> str | None:
         """ The API strips BBCode tags from the result.
         
         You cannot contain this field in a list.
@@ -601,7 +601,7 @@ class Anime(Node):
 
         return self.__background
 
-    def getRelatedAnimes(self) -> List[RelatedNode] | None:
+    def get_related_animes(self) -> List[RelatedNode] | None:
         """ List of related animes.
         
         You cannot contain this field in a list.
@@ -613,7 +613,7 @@ class Anime(Node):
 
         return self.__related_anime
 
-    def getRelatedMangas(self) -> List[RelatedNode] | None:
+    def get_related_mangas(self) -> List[RelatedNode] | None:
         """ List of related mangas.
         
         You cannot contain this field in a list.
@@ -625,7 +625,7 @@ class Anime(Node):
 
         return self.__related_manga
 
-    def getRecommendations(self) -> List[Recommendation] | None:
+    def get_recommendations(self) -> List[Recommendation] | None:
         """ Summary of recommended anime for those who like this anime.
         
         You cannot contain this field in a list.
@@ -637,7 +637,7 @@ class Anime(Node):
 
         return self.__recommendations
 
-    def getStatistics(self) -> Statistics | None:
+    def get_statistics(self) -> Statistics | None:
         """ Anime statistics on MyAnimeList.
         
         You cannot contain this field in a list.

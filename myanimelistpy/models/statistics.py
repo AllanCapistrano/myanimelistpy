@@ -14,8 +14,8 @@ class Statistics:
 
         self.__num_list_users = num_list_users
         self.__status = status
-        
-    def getNumUserList(self) -> int:
+
+    def get_num_user_list(self) -> int:
         """ The number of users who have the anime in their list.
 
         Returns
@@ -25,7 +25,7 @@ class Statistics:
 
         return self.__num_list_users
 
-    def getStatus(self) -> StatisticsStatus:
+    def get_status(self) -> StatisticsStatus:
         """ Anime status in the users list.
 
         Returns

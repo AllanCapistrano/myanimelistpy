@@ -1,14 +1,14 @@
 from sys import path
-path.append("../../") 
 
 import unittest
 from os import getenv
 from dotenv import load_dotenv
 
 from myanimelistpy.myanimelist import MyAnimeList
-from myanimelistpy.models.anime import Anime
 
-class TestGetAnimeList(unittest.TestCase):
+path.append("../../")
+
+class TestGetAnimeListInDict(unittest.TestCase):
     @classmethod
     def setUpClass(self) -> None:
         load_dotenv()
@@ -19,31 +19,31 @@ class TestGetAnimeList(unittest.TestCase):
         self.limit         = "4"
         self.offset        = 0
 
-    def test_getAnimeList_length(self):
+    def test_get_anime_list_in_dict_length(self):
         """ Check the length of the anime list.
         """
-        
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset
         )
 
         self.assertEqual(4, len(anime_list), "Should be 4.")
 
-    def test_getAnimeList_object_type(self):
+    def test_get_anime_list_in_dict_object_type(self):
         """ Check the type of objects in the anime list.
         """
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset
         )
-        
-        self.assertIsInstance(anime_list.pop(), Anime)
 
-    def test_getAnimeList_alternative_titles_field(self):
+        self.assertIsInstance(anime_list, list)
+
+    def test_get_anime_list_in_dict_alternative_titles_field(self):
         """ Check if the 'alternative_titles' field used for the request are 
         correct.
         """
@@ -52,32 +52,32 @@ class TestGetAnimeList(unittest.TestCase):
             "alternative_titles",
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
+        anime: dict = anime_list[0]["node"]
 
         self.assertEqual(
             ["HxH (2011)"],
-            anime.getAlternativeTitle().getSynonyms(),
+            anime["alternative_titles"]["synonyms"],
             "Should be a list of synonyms with 'HxH (2011)' as the first element."
         )
         self.assertEqual(
             "Hunter x Hunter",
-            anime.getAlternativeTitle().getEnglish(),
+            anime["alternative_titles"]["en"],
             "Should be 'Hunter x Hunter'."
         )
         self.assertEqual(
             "HUNTER×HUNTER（ハンター×ハンター）",
-            anime.getAlternativeTitle().getJapanese(),
+            anime["alternative_titles"]["ja"],
             "Should be 'HUNTER×HUNTER（ハンター×ハンター）'."
         )
 
-    def test_getAnimeList_start_date_field(self):
+    def test_get_anime_list_in_dict_start_date_field(self):
         """ Check if the 'start_date' field used for the request are 
         correct.
         """
@@ -86,22 +86,22 @@ class TestGetAnimeList(unittest.TestCase):
             "start_date",
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
+        anime: dict = anime_list[0]["node"]
+
         self.assertEqual(
             "2011-10-02", 
-            anime.getStartDate(), 
+            anime["start_date"], 
             "Should be 2011-10-02."
         )
-    
-    def test_getAnimeList_end_date_field(self):
+
+    def test_get_anime_list_in_dict_end_date_field(self):
         """ Check if the 'end_date' field used for the request are 
         correct.
         """
@@ -110,22 +110,22 @@ class TestGetAnimeList(unittest.TestCase):
             "end_date"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
+        anime: dict = anime_list[0]["node"]
+
         self.assertEqual(
             "2014-09-24", 
-            anime.getEndDate(), 
+            anime["end_date"],
             "Should be 2014-09-24."
         )
-    
-    def test_getAnimeList_synopsis_field(self):
+
+    def test_get_anime_list_in_dict_synopsis_field(self):
         """ Check if the 'synopsis' field used for the request are 
         correct.
         """
@@ -134,18 +134,18 @@ class TestGetAnimeList(unittest.TestCase):
             "synopsis"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertIn("Hunters devote themselves to", anime.getSynopsis())
-        
-    def test_getAnimeList_mean_field(self):
+        anime: dict = anime_list[0]["node"]
+
+        self.assertIn("Hunters devote themselves to", anime["synopsis"])
+
+    def test_get_anime_list_in_dict_mean_field(self):
         """ Check if the 'mean' field used for the request are 
         correct.
         """
@@ -154,18 +154,18 @@ class TestGetAnimeList(unittest.TestCase):
             "mean"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertIsInstance(anime.getMean(), float)
+        anime: dict = anime_list[0]["node"]
 
-    def test_getAnimeList_rank_field(self):
+        self.assertIsInstance(anime["mean"], float)
+
+    def test_get_anime_list_in_dict_rank_field(self):
         """ Check if the 'rank' field used for the request are 
         correct.
         """
@@ -174,18 +174,18 @@ class TestGetAnimeList(unittest.TestCase):
             "rank"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertIsInstance(anime.getRank(), int)
+        anime: dict = anime_list[0]["node"]
 
-    def test_getAnimeList_popularity_field(self):
+        self.assertIsInstance(anime["rank"], int)
+
+    def test_get_anime_list_in_dict_popularity_field(self):
         """ Check if the 'popularity' field used for the request are 
         correct.
         """
@@ -194,18 +194,18 @@ class TestGetAnimeList(unittest.TestCase):
             "popularity"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertIsInstance(anime.getPopularity(), int)
-    
-    def test_getAnimeList_num_list_users_field(self):
+        anime: dict = anime_list[0]["node"]
+
+        self.assertIsInstance(anime["popularity"], int)
+
+    def test_get_anime_list_in_dict_num_list_users_field(self):
         """ Check if the 'num_list_users' field used for the request are 
         correct.
         """
@@ -214,18 +214,18 @@ class TestGetAnimeList(unittest.TestCase):
             "num_list_users"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertIsInstance(anime.getNumUserList(), int)
-    
-    def test_getAnimeList_num_scoring_users_field(self):
+        anime: dict = anime_list[0]["node"]
+
+        self.assertIsInstance(anime["num_list_users"], int)
+
+    def test_get_anime_list_in_dict_num_scoring_users_field(self):
         """ Check if the 'num_scoring_users' field used for the request are 
         correct.
         """
@@ -234,18 +234,18 @@ class TestGetAnimeList(unittest.TestCase):
             "num_scoring_users"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertIsInstance(anime.getNumScoringUsers(), int)
-    
-    def test_getAnimeList_nsfw_field(self):
+        anime: dict = anime_list[0]["node"]
+
+        self.assertIsInstance(anime["num_scoring_users"], int)
+
+    def test_get_anime_list_in_dict_nsfw_field(self):
         """ Check if the 'nsfw' field used for the request are 
         correct.
         """
@@ -254,22 +254,22 @@ class TestGetAnimeList(unittest.TestCase):
             "nsfw"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
+        anime: dict = anime_list[0]["node"]
 
         self.assertEqual(
-            "This work is safe for work", 
-            anime.getNsfwClassification(),
-            "Should be 'This work is safe for work'."
+            "white", 
+            anime["nsfw"],
+            "Should be 'white'."
         )
-    
-    def test_getAnimeList_genres_field(self):
+
+    def test_get_anime_list_in_dict_genres_field(self):
         """ Check if the 'genres' field used for the request are 
         correct.
         """
@@ -278,28 +278,28 @@ class TestGetAnimeList(unittest.TestCase):
             "genres"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
+        anime: dict = anime_list[0]["node"]
 
-        self.assertGreater(len(anime.getGenres()), 0)
+        self.assertGreater(len(anime["genres"]), 0)
 
-        self.assertIsInstance(anime.getGenres()[0].getId(), int)
-        self.assertIsInstance(anime.getGenres()[0].getName(), str)
+        self.assertIsInstance(anime["genres"][0]["id"], int)
+        self.assertIsInstance(anime["genres"][0]["name"], str)
 
-        self.assertEqual(1, anime.getGenres()[0].getId(), "Should be 1.")
+        self.assertEqual(1, anime["genres"][0]["id"], "Should be 1.")
         self.assertEqual(
             "Action", 
-            anime.getGenres()[0].getName(), 
+            anime["genres"][0]["name"],
             "Should be 'Action'."
         )
 
-    def test_getAnimeList_created_at_field(self):
+    def test_get_anime_list_in_dict_created_at_field(self):
         """ Check if the 'created_at' field used for the request are 
         correct.
         """
@@ -308,18 +308,18 @@ class TestGetAnimeList(unittest.TestCase):
             "created_at"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertIsInstance(anime.getCreatedAt(), str)
-    
-    def test_getAnimeList_updated_at_field(self):
+        anime: dict = anime_list[0]["node"]
+
+        self.assertIsInstance(anime["created_at"], str)
+
+    def test_get_anime_list_in_dict_updated_at_field(self):
         """ Check if the 'updated_at' field used for the request are 
         correct.
         """
@@ -328,18 +328,18 @@ class TestGetAnimeList(unittest.TestCase):
             "updated_at"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertIsInstance(anime.getUpdatedAt(), str)
-    
-    def test_getAnimeList_media_type_field(self):
+        anime: dict = anime_list[0]["node"]
+
+        self.assertIsInstance(anime["updated_at"], str)
+
+    def test_get_anime_list_in_dict_media_type_field(self):
         """ Check if the 'media_type' field used for the request are 
         correct.
         """
@@ -348,18 +348,18 @@ class TestGetAnimeList(unittest.TestCase):
             "media_type"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertEqual("tv", anime.getMediaType(), "Should be 'tv'.")
-    
-    def test_getAnimeList_status_field(self):
+        anime: dict = anime_list[0]["node"]
+
+        self.assertEqual("tv", anime["media_type"], "Should be 'tv'.")
+
+    def test_get_anime_list_in_dict_status_field(self):
         """ Check if the 'status' field used for the request are 
         correct.
         """
@@ -368,22 +368,22 @@ class TestGetAnimeList(unittest.TestCase):
             "status"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
+        anime: dict = anime_list[0]["node"]
+
         self.assertEqual(
-            "Finished airing", 
-            anime.getStatus(), 
-            "Should be 'Finished airing'."
+            "finished_airing", 
+            anime["status"],
+            "Should be 'finished_airing'."
         )
-    
-    def test_getAnimeList_num_episodes_field(self):
+
+    def test_get_anime_list_in_dict_num_episodes_field(self):
         """ Check if the 'num_episodes' field used for the request are 
         correct.
         """
@@ -392,18 +392,18 @@ class TestGetAnimeList(unittest.TestCase):
             "num_episodes"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertIsInstance(anime.getNumEpisodes(), int)
-    
-    def test_getAnimeList_start_season_field(self):
+        anime: dict = anime_list[0]["node"]
+
+        self.assertIsInstance(anime["num_episodes"], int)
+
+    def test_get_anime_list_in_dict_start_season_field(self):
         """ Check if the 'start_season' field used for the request are 
         correct.
         """
@@ -412,27 +412,27 @@ class TestGetAnimeList(unittest.TestCase):
             "start_season"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
+        anime: dict = anime_list[0]["node"]
+
         self.assertEqual(
-            "Fall", 
-            anime.getStartSeason().getSeason(), 
-            "Should be 'Fall'."
+            "fall", 
+            anime["start_season"]["season"],
+            "Should be 'fall'."
         )
         self.assertEqual(
-            2011, 
-            anime.getStartSeason().getYear(), 
+            2011,
+            anime["start_season"]["year"],
             "Should be 2011."
         )
-    
-    def test_getAnimeList_broadcast_field(self):
+
+    def test_get_anime_list_in_dict_broadcast_field(self):
         """ Check if the 'broadcast' field used for the request are 
         correct.
         """
@@ -441,27 +441,27 @@ class TestGetAnimeList(unittest.TestCase):
             "broadcast"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
+        anime: dict = anime_list[0]["node"]
+
         self.assertEqual(
             "sunday", 
-            anime.getBroadcast().getDayOfTheWeek(), 
+            anime["broadcast"]["day_of_the_week"],
             "Should be 'sunday'.",
         )
         self.assertEqual(
             "10:55", 
-            anime.getBroadcast().getStartTime(), 
+            anime["broadcast"]["start_time"],
             "Should be '10:55'.",
         )
-    
-    def test_getAnimeList_no_broadcast(self):
+
+    def test_get_anime_list_in_dict_no_broadcast(self):
         """ Checks if a non-broadcast anime is returning correctly
         """
 
@@ -469,18 +469,18 @@ class TestGetAnimeList(unittest.TestCase):
             "broadcast"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[3]
-        
-        self.assertIsNone(anime.getBroadcast())
-    
-    def test_getAnimeList_source_field(self):
+        anime: dict = anime_list[3]
+
+        self.assertNotIn("broadcast", anime)
+
+    def test_get_anime_list_in_dict_source_field(self):
         """ Check if the 'source' field used for the request are 
         correct.
         """
@@ -489,18 +489,18 @@ class TestGetAnimeList(unittest.TestCase):
             "source"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertEqual("Manga", anime.getSource(), "Should be 'Manga'.")
-    
-    def test_getAnimeList_average_episode_duration_field(self):
+        anime: dict = anime_list[0]["node"]
+
+        self.assertEqual("manga", anime["source"], "Should be 'manga'.")
+
+    def test_get_anime_list_in_dict_average_episode_duration_field(self):
         """ Check if the 'average_episode_duration' field used for the request are 
         correct.
         """
@@ -509,22 +509,22 @@ class TestGetAnimeList(unittest.TestCase):
             "average_episode_duration"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
+        anime: dict = anime_list[0]["node"]
+
         self.assertEqual(
-            1417, 
-            anime.getAvgEpisodeDurationInSeconds(), 
+            1417,
+            anime["average_episode_duration"],
             "Should be 1417."
         )
-    
-    def test_getAnimeList_rating_field(self):
+
+    def test_get_anime_list_in_dict_rating_field(self):
         """ Check if the 'rating' field used for the request are 
         correct.
         """
@@ -533,22 +533,22 @@ class TestGetAnimeList(unittest.TestCase):
             "rating"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
+        anime: dict = anime_list[0]["node"]
+
         self.assertEqual(
-            "Teens 13 and Older", 
-            anime.getRating(), 
-            "Should be 'Teens 13 and Older'."
+            "pg_13", 
+            anime["rating"],
+            "Should be 'pg_13'."
         )
-    
-    def test_getAnimeList_studios_field(self):
+
+    def test_get_anime_list_in_dict_studios_field(self):
         """ Check if the 'studios' field used for the request are 
         correct.
         """
@@ -557,25 +557,25 @@ class TestGetAnimeList(unittest.TestCase):
             "studios"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
-        
-        self.assertGreater(len(anime.getStudios()), 0)
+        anime: dict = anime_list[0]["node"]
 
-        self.assertEqual(11, anime.getStudios()[0].getId(), "Should be 11.")
+        self.assertGreater(len(anime["studios"]), 0)
+
+        self.assertEqual(11, anime["studios"][0]["id"], "Should be 11.")
         self.assertEqual(
             "Madhouse", 
-            anime.getStudios()[0].getName(), 
+            anime["studios"][0]["name"],
             "Should be 'Madhouse'."
         )
-    
-    def test_getAnimeList_pictures_field(self):
+
+    def test_get_anime_list_in_dict_pictures_field(self):
         """ Check if the 'pictures' field used for the request are 
         correct.
         """
@@ -584,18 +584,18 @@ class TestGetAnimeList(unittest.TestCase):
             "pictures"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
+        anime: dict = anime_list[0]["node"]
 
-        self.assertIsNone(anime.getPictures())
-    
-    def test_getAnimeList_background_field(self):
+        self.assertNotIn("pictures", anime)
+
+    def test_get_anime_list_in_dict_background_field(self):
         """ Check if the 'background' field used for the request are 
         correct.
         """
@@ -604,18 +604,18 @@ class TestGetAnimeList(unittest.TestCase):
             "background"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
+        anime: dict = anime_list[0]["node"]
 
-        self.assertIsNone(anime.getBackground())
-    
-    def test_getAnimeList_related_anime_field(self):
+        self.assertNotIn("background", anime)
+
+    def test_get_anime_list_in_dict_related_anime_field(self):
         """ Check if the 'related_anime' field used for the request are 
         correct.
         """
@@ -624,18 +624,18 @@ class TestGetAnimeList(unittest.TestCase):
             "related_anime"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
+        anime: dict = anime_list[0]["node"]
 
-        self.assertIsNone(anime.getRelatedAnimes())
-    
-    def test_getAnimeList_related_manga_field(self):
+        self.assertNotIn("related_anime", anime)
+
+    def test_get_anime_list_in_dict_related_manga_field(self):
         """ Check if the 'related_manga' field used for the request are 
         correct.
         """
@@ -644,18 +644,18 @@ class TestGetAnimeList(unittest.TestCase):
             "related_manga"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
             anime_name = self.anime_name, 
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
+        anime: dict = anime_list[0]["node"]
 
-        self.assertIsNone(anime.getRelatedMangas())
-    
-    def test_getAnimeList_recommendations_field(self):
+        self.assertNotIn("related_manga", anime)
+
+    def test_get_anime_list_in_dict_recommendations_field(self):
         """ Check if the 'recommendations' field used for the request are 
         correct.
         """
@@ -664,18 +664,18 @@ class TestGetAnimeList(unittest.TestCase):
             "recommendations"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
+        anime: dict = anime_list[0]["node"]
 
-        self.assertIsNone(anime.getRecommendations())
-    
-    def test_getAnimeList_statistics_field(self):
+        self.assertNotIn("recommendations", anime)
+
+    def test_get_anime_list_in_dict_statistics_field(self):
         """ Check if the 'statistics' field used for the request are 
         correct.
         """
@@ -684,26 +684,26 @@ class TestGetAnimeList(unittest.TestCase):
             "statistics"
         ]
 
-        anime_list = self.my_anime_list.getAnimeList(
-            anime_name = self.anime_name, 
+        anime_list = self.my_anime_list.get_anime_list_in_dict(
+            anime_name = self.anime_name,
             limit      = self.limit,
             offset     = self.offset,
             fields     = fields
         )
 
-        anime: Anime = anime_list[0]
+        anime: dict = anime_list[0]["node"]
 
-        self.assertIsNone(anime.getStatistics())
+        self.assertNotIn("statistics", anime)
 
-    def test_getAnimeList_invalid_field(self):
+    def test_get_anime_list_in_dict_invalid_field(self):
         """ Check if invalid fields will throw an exception.
         """
 
         fields = ["synopsis", "ranky"]
 
         with self.assertRaises(ValueError):
-            self.my_anime_list.getAnimeList(
-                anime_name = self.anime_name, 
+            self.my_anime_list.get_anime_list_in_dict(
+                anime_name = self.anime_name,
                 limit      = self.limit,
                 offset     = self.offset,
                 fields     = fields

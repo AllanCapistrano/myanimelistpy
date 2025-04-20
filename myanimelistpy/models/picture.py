@@ -1,4 +1,3 @@
-
 class Picture:
     def __init__(self, large: str, medium: str) -> None:
         """ Constructor.
@@ -14,7 +13,7 @@ class Picture:
         self.__large  = large
         self.__medium = medium 
 
-    def getLarge(self) -> str:
+    def get_large(self) -> str:
         """ Large size picture.
 
         Returns
@@ -24,7 +23,7 @@ class Picture:
 
         return self.__large
 
-    def getMedium(self) -> str:
+    def get_medium(self) -> str:
         """ Medium size picture.
 
         Returns

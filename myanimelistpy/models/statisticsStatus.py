@@ -1,4 +1,3 @@
-
 class StatisticsStatus:
     def __init__(
         self,
@@ -30,7 +29,7 @@ class StatisticsStatus:
         self.__dropped       = dropped
         self.__plan_to_watch = plan_to_watch
 
-    def getNumWatching(self) -> int:
+    def get_num_watching(self) -> int:
         """ The number of users who are watching the anime.
 
         Returns
@@ -40,7 +39,7 @@ class StatisticsStatus:
 
         return self.__watching
 
-    def getNumCompleted(self) -> int:
+    def get_num_completed(self) -> int:
         """ The number of users who are completed the anime.
 
         Returns
@@ -50,7 +49,7 @@ class StatisticsStatus:
 
         return self.__completed
 
-    def getNumOnHold(self) -> int:
+    def get_num_on_hold(self) -> int:
         """ The number of users who are waiting for the anime.
 
         Returns
@@ -59,8 +58,8 @@ class StatisticsStatus:
         """
 
         return self.__on_hold
-    
-    def getNumDropped(self) -> int:
+
+    def get_num_dropped(self) -> int:
         """ The number of users who are dropped the anime.
 
         Returns
@@ -70,7 +69,7 @@ class StatisticsStatus:
 
         return self.__dropped
 
-    def getNumPlanToWatch(self) -> int:
+    def get_num_plan_to_watch(self) -> int:
         """ The number of users who plan to watch the anime.
 
         Returns

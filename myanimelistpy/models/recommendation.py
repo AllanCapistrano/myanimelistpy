@@ -3,10 +3,10 @@ from .picture import Picture
 
 class Recommendation(Node):
     def __init__(
-        self, 
-        id: int, 
-        title: str, 
-        main_picture: Picture, 
+        self,
+        id: int,
+        title: str,
+        main_picture: Picture,
         num_recommendations: int
     ) -> None:
         """ Constructor.
@@ -27,7 +27,7 @@ class Recommendation(Node):
 
         self.__num_recommendations = num_recommendations
 
-    def getNumRecommendations(self) -> int:
+    def get_num_recommendations(self) -> int:
         """ Number of recommendations.
 
         Returns

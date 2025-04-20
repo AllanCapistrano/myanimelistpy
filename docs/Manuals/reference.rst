@@ -23,7 +23,7 @@ MyAnimeList
 Methods
 -------
 
-.. method:: getAnimeList(anime_name, limit = 100, offset = 0, fields = [])
+.. method:: get_anime_list(anime_name, limit = 100, offset = 0, fields = [])
 .. _getAnimeList:
 
     Returns a list of anime by name.
@@ -43,7 +43,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Anime <anime>`]
 
-.. method:: getAnimeListInDict(anime_name, limit = 100, offset = 0, fields = [])
+.. method:: get_anime_list_in_dict(anime_name, limit = 100, offset = 0, fields = [])
 .. _getAnimeListInDict:
 
     Returns a list of dictionaries containing the anime by name.
@@ -63,7 +63,7 @@ Methods
     **Return type:**
         `dict <https://docs.python.org/3/library/stdtypes.html#dict>`_
 
-.. method:: getAnimeListInJSON(anime_name, limit = 100, offset = 0, fields = [])
+.. method:: get_anime_list_in_json(anime_name, limit = 100, offset = 0, fields = [])
 .. _getAnimeListInJSON:
 
     Returns a JSON stringified containing the list of anime by name.
@@ -95,7 +95,7 @@ Services that are used in the library.
     * - Methods
     * - :ref:`validateFields <validatefields>`
 
-.. method:: services.validateFields(fields)
+.. method:: services.validate_fields(fields)
 .. _validateFields:
 
     Validate the fields provided.
@@ -136,9 +136,9 @@ AlternativeTitles
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getSynonyms() <getSynonyms>`
-    * - :ref:`getEnglish() <getEnglish>`
-    * - :ref:`getJapanese() <getJapanese>`
+    * - :ref:`get_synonyms() <get_synonyms>`
+    * - :ref:`get_english() <get_english>`
+    * - :ref:`get_japanese() <get_japanese>`
 
 **Parameters:**
     - synonyms (`List <https://docs.python.org/3/library/stdtypes.html#list>`_ [`str <https://docs.python.org/3/library/stdtypes.html#str>`_]) - A list of title synonyms.
@@ -148,7 +148,7 @@ AlternativeTitles
 Methods
 ~~~~~~~
 
-.. method:: getSynonyms()
+.. method:: get_synonyms()
 .. _getSynonyms:
 
     List of synonyms.
@@ -156,7 +156,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [`str <https://docs.python.org/3/library/stdtypes.html#str>`_]
 
-.. method:: getEnglish()
+.. method:: get_english()
 .. _getEnglish:
 
     English version.
@@ -164,7 +164,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getJapanese()
+.. method:: get_japanese()
 .. _getJapanese:
 
     Japanese version.
@@ -184,37 +184,37 @@ Anime
 
     * - Methods
       - Methods
-    * - :ref:`getId() <getIdAnime>`
-      - :ref:`getTitle() <getTitleAnime>`
-    * - :ref:`getMainPicture <getMainPictureAnime>`
-      - :ref:`getStartDate() <getStartDate>`
-    * - :ref:`getAlternativeTitle() <getAlternativeTitle>`
-      - :ref:`getSynopsis() <getSynopsis>`
-    * - :ref:`getEndDate() <getEndDate>`
-      - :ref:`getRank() <getRank>`
-    * - :ref:`getMean() <getMean>`
-      - :ref:`getNumUserList() <getNumUserList>`
-    * - :ref:`getPopularity() <getPopularity>`
-      - :ref:`getNsfwClassification() <getNsfwClassification>`
-    * - :ref:`getNumScoringUsers() <getNumScoringUsers>`
-      - :ref:`getCreatedAt() <getCreatedAt>`
-    * - :ref:`getGenres() <getGenres>`
-      - :ref:`getMediaType() <getMediaType>`
-    * - :ref:`getUpdatedAt() <getUpdatedAt>`
-      - :ref:`getNumEpisodes() <getNumEpisodes>`
-    * - :ref:`getStatus() <getStatus>`
-      - :ref:`getBroadcast() <getBroadcast>`
-    * - :ref:`getStartSeason() <getStartSeason>`
-      - :ref:`getAvgEpisodeDurationInSeconds() <getAvgEpisodeDurationInSeconds>`
-    * - :ref:`getSource() <getSource>`
-      - :ref:`getStudios() <getStudios>`
-    * - :ref:`getRating() <getRating>`
-      - :ref:`getBackground() <getBackground>`
-    * - :ref:`getPictures() <getPictures>`
-      - :ref:`getRelatedMangas() <getRelatedMangas>`
-    * - :ref:`getRelatedAnimes() <getRelatedAnimes>`
-      - :ref:`getStatistics() <getStatistics>`
-    * - :ref:`getRecommendations() <getRecommendations>`
+    * - :ref:`get_id() <getIdAnime>`
+      - :ref:`get_title() <getTitleAnime>`
+    * - :ref:`get_main_picture <getMainPictureAnime>`
+      - :ref:`get_start_date() <get_start_date>`
+    * - :ref:`get_alternative_title() <get_alternative_title>`
+      - :ref:`get_synopsis() <get_synopsis>`
+    * - :ref:`get_end_date() <get_end_date>`
+      - :ref:`get_rank() <get_rank>`
+    * - :ref:`get_mean_score() <get_mean_score>`
+      - :ref:`get_num_user_list() <get_num_user_list>`
+    * - :ref:`get_popularity() <get_popularity>`
+      - :ref:`get_nsfw_classification() <get_nsfw_classification>`
+    * - :ref:`get_num_scoring_users() <get_num_scoring_users>`
+      - :ref:`get_created_at() <get_created_at>`
+    * - :ref:`get_genres() <get_genres>`
+      - :ref:`get_media_type() <get_media_type>`
+    * - :ref:`get_updated_at() <get_updated_at>`
+      - :ref:`get_num_episodes() <get_num_episodes>`
+    * - :ref:`get_status() <get_status>`
+      - :ref:`get_broadcast() <get_broadcast>`
+    * - :ref:`get_start_season() <get_start_season>`
+      - :ref:`get_avg_episode_duration_in_seconds() <get_avg_episode_duration_in_seconds>`
+    * - :ref:`get_source() <get_source>`
+      - :ref:`get_studios() <get_studios>`
+    * - :ref:`get_rating() <get_rating>`
+      - :ref:`get_background() <get_background>`
+    * - :ref:`get_pictures() <get_pictures>`
+      - :ref:`get_related_mangas() <get_related_mangas>`
+    * - :ref:`get_related_animes() <get_related_animes>`
+      - :ref:`get_statistics() <get_statistics>`
+    * - :ref:`get_recommendations() <get_recommendations>`
       - 
 
 **Parameters:**
@@ -224,7 +224,7 @@ Anime
 Methods
 ~~~~~~~
 
-.. method:: getId()
+.. method:: get_id()
     :noindex:
 .. _getIdAnime:
 
@@ -233,7 +233,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getTitle()
+.. method:: get_title()
     :noindex:
 .. _getTitleAnime:
 
@@ -242,7 +242,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getMainPicture()
+.. method:: get_main_picture()
     :noindex:
 .. _getMainPictureAnime:
 
@@ -251,7 +251,7 @@ Methods
     **Return type:**
         :ref:`Picture <picture>`
 
-.. method:: getAlternativeTitle()
+.. method:: get_alternative_title()
 .. _getAlternativeTitle:
 
     The alternative title of the anime.
@@ -259,7 +259,7 @@ Methods
     **Return type:**
         :ref:`AlternativeTitles <AlternativeTitles>`
 
-.. method:: getStartDate()
+.. method:: get_start_date()
 .. _getStartDate:
 
     The anime start date. Format ``YYYY-mm-dd``.
@@ -267,7 +267,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getEndDate()
+.. method:: get_end_date()
 .. _getEndDate:
 
     The anime end date. Format ``YYYY-mm-dd``.
@@ -275,7 +275,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getSynopsis()
+.. method:: get_synopsis()
 .. _getSynopsis:
 
     Anime synopsis.
@@ -283,7 +283,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getMean()
+.. method:: get_mean_score()
 .. _getMean:
 
     Mean score.
@@ -291,7 +291,7 @@ Methods
     **Return type:**
         `float <https://docs.python.org/3/library/functions.html#float>`_
 
-.. method:: getRank()
+.. method:: get_rank()
 .. _getRank:
 
     Anime rank.
@@ -299,7 +299,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getPopularity()
+.. method:: get_popularity()
 .. _getPopularity:
 
     Anime popularity.
@@ -307,7 +307,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getNumUserList()
+.. method:: get_num_user_list()
 .. _getNumUserList:
 
     The number of users who have the anime in their list.
@@ -315,7 +315,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getNumScoringUsers()
+.. method:: get_num_scoring_users()
 .. _getNumScoringUsers:
 
     The number of users who rated the anime.
@@ -323,7 +323,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getNsfwClassification()
+.. method:: get_nsfw_classification()
 .. _getNsfwClassification:
 
     Anime NSFW classification.
@@ -331,7 +331,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getGenres()
+.. method:: get_genres()
 .. _getGenres:
 
     The list of anime genres.
@@ -339,7 +339,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Genre <genre>`]
 
-.. method:: getCreatedAt()
+.. method:: get_created_at()
 .. _getCreatedAt:
 
     Timestamp of anime creation in MyAnimeList database.
@@ -347,7 +347,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getUpdatedAt()
+.. method:: get_updated_at()
 .. _getUpdatedAt:
 
     Timestamp of anime update in MyAnimeList database.
@@ -355,7 +355,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getMediaType()
+.. method:: get_media_type()
 .. _getMediaType:
 
     Anime media type.
@@ -363,7 +363,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getStatus()
+.. method:: get_status()
 .. _getStatus:
 
     Airing status.
@@ -371,7 +371,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getNumEpisodes()
+.. method:: get_num_episodes()
 .. _getNumEpisodes:
 
     The total number of episodes of this series. If unknown, it is 0.
@@ -379,7 +379,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getStartSeason()
+.. method:: get_start_season()
 .. _getStartSeason:
 
     Anime start season.
@@ -387,7 +387,7 @@ Methods
     **Return type:**
         :ref:`Season <Season>`
 
-.. method:: getBroadcast()
+.. method:: get_broadcast()
 .. _getBroadcast:
 
     Broadcast day of the week and start time (JST).
@@ -395,7 +395,7 @@ Methods
     **Return type:**
         :ref:`Broadcast <broadcast>` | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-.. method:: getSource()
+.. method:: get_source()
 .. _getSource:
 
     Original work.
@@ -403,7 +403,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getAvgEpisodeDurationInSeconds()
+.. method:: get_avg_episode_duration_in_seconds()
 .. _getAvgEpisodeDurationInSeconds:
 
     Average length of episode in seconds.
@@ -411,7 +411,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getRating()
+.. method:: get_rating()
 .. _getRating:
 
     Anime rating.
@@ -419,7 +419,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getStudios()
+.. method:: get_studios()
 .. _getStudios:
 
     List of studios that produced the anime.
@@ -427,7 +427,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Studio <studio>`]
 
-.. method:: getPictures()
+.. method:: get_pictures()
 .. _getPictures:
 
     List of anime pictures.
@@ -437,7 +437,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Picture <picture>`] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-.. method:: getBackground()
+.. method:: get_background()
 .. _getBackground:
 
     The API strips BBCode tags from the result.
@@ -447,7 +447,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [`str <https://docs.python.org/3/library/stdtypes.html#str>`_] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-.. method:: getRelatedAnimes()
+.. method:: get_related_animes()
 .. _getRelatedAnimes:
 
     List of related animes.
@@ -457,7 +457,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`RelatedNode <relatedNode>`] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-.. method:: getRelatedMangas()
+.. method:: get_related_mangas()
 .. _getRelatedMangas:
 
     List of related mangas.
@@ -467,7 +467,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`RelatedNode <relatedNode>`] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-.. method:: getRecommendations()
+.. method:: get_recommendations()
 .. _getRecommendations:
 
     Summary of recommended anime for those who like this anime.
@@ -477,7 +477,7 @@ Methods
     **Return type:**
         `List <https://docs.python.org/3/library/stdtypes.html#list>`_ [:ref:`Recommendation <recommendation>`] | `None <https://docs.python.org/3/library/constants.html?highlight=none#None>`_
 
-.. method:: getStatistics()
+.. method:: get_statistics()
 .. _getStatistics:
 
     Anime statistics on MyAnimeList.
@@ -498,8 +498,8 @@ Broadcast
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getDayOfTheWeek() <getDayOfTheWeek>`
-    * - :ref:`getStartTime() <getStartTime>`
+    * - :ref:`get_day_of_the_week() <get_day_of_the_week>`
+    * - :ref:`get_start_time() <get_start_time>`
 
 **Parameters:**
     - day_of_the_week (:ref:`DayWeekEnum <dayWeekEnum>`) - Day of the week broadcast in Japan time.
@@ -508,7 +508,7 @@ Broadcast
 Methods
 ~~~~~~~
 
-.. method:: getDayOfTheWeek()
+.. method:: get_day_of_the_week()
 .. _getDayOfTheWeek:
 
     Broadcast day of the week.    
@@ -516,7 +516,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getStartTime()
+.. method:: get_start_time()
 .. _getStartTime:
 
     Anime start time in JST.
@@ -535,8 +535,8 @@ Genre
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getId() <getIdGenre>`
-    * - :ref:`getName() <getNameGenre>`
+    * - :ref:`get_id() <getIdGenre>`
+    * - :ref:`get_name() <getNameGenre>`
 
 **Parameters:**
     - id (`int <https://docs.python.org/3/library/functions.html#int>`_) - ID of the genre.
@@ -545,7 +545,7 @@ Genre
 Methods
 ~~~~~~~
 
-.. method:: getId()
+.. method:: get_id()
 .. _getIdGenre:
 
     Genre ID.
@@ -553,7 +553,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getName()
+.. method:: get_name()
 .. _getNameGenre:
 
     Genre name.
@@ -572,9 +572,9 @@ Node
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getId() <getIdNode>`
-    * - :ref:`getTitle() <getTitle>`
-    * - :ref:`getMainPicture() <getMainPicture>`
+    * - :ref:`get_id() <getIdNode>`
+    * - :ref:`get_title() <get_title>`
+    * - :ref:`get_main_picture() <get_main_picture>`
 
 **Parameters:**
     - id (`int <https://docs.python.org/3/library/functions.html#int>`_) - 
@@ -584,7 +584,7 @@ Node
 Methods
 ~~~~~~~
 
-.. method:: getId()
+.. method:: get_id()
     :noindex:
 .. _getIdNode:
 
@@ -593,7 +593,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getTitle()
+.. method:: get_title()
 .. _getTitle:
 
     Anime or manga title.
@@ -601,7 +601,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getMainPicture()
+.. method:: get_main_picture()
 .. _getMainPicture:
 
     Anime or manga main picture.
@@ -620,8 +620,8 @@ Picture
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getLarge() <getLarge>`
-    * - :ref:`getMedium() <getMedium>`
+    * - :ref:`get_large() <get_large>`
+    * - :ref:`get_medium() <get_medium>`
 
 **Parameters:**
     - large (`str <https://docs.python.org/3/library/stdtypes.html#str>`_) - The URI of an anime's large picture.
@@ -630,7 +630,7 @@ Picture
 Methods
 ~~~~~~~
 
-.. method:: getLarge()
+.. method:: get_large()
 .. _getLarge:
 
     Large size picture.
@@ -638,7 +638,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getMedium()
+.. method:: get_medium()
 .. _getMedium:
 
     Medium size picture.
@@ -657,10 +657,10 @@ Recommendation
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getId() <getIdRecommendation>`
-    * - :ref:`getTitle() <getTitleRecommendation>`
-    * - :ref:`getMainPicture() <getMainPictureRecommendation>`
-    * - :ref:`getNumRecommendations() <getNumRecommendations>`
+    * - :ref:`get_id() <getIdRecommendation>`
+    * - :ref:`get_title() <getTitleRecommendation>`
+    * - :ref:`get_main_picture() <getMainPictureRecommendation>`
+    * - :ref:`get_num_recommendations() <get_num_recommendations>`
 
 **Parameters:**
     - id (`int <https://docs.python.org/3/library/functions.html#int>`_) - ID of the anime.
@@ -671,7 +671,7 @@ Recommendation
 Methods
 ~~~~~~~
 
-.. method:: getId()
+.. method:: get_id()
     :noindex:
 .. _getIdRecommendation:
 
@@ -680,7 +680,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getTitle()
+.. method:: get_title()
     :noindex:
 .. _getTitleRecommendation:
 
@@ -689,7 +689,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getMainPicture()
+.. method:: get_main_picture()
     :noindex:
 .. _getMainPictureRecommendation:
 
@@ -698,7 +698,7 @@ Methods
     **Return type:**
         :ref:`Picture <picture>`
 
-.. method:: getNumRecommendations()
+.. method:: get_num_recommendations()
 .. _getNumRecommendations:
 
     Number of recommendations.
@@ -717,10 +717,10 @@ RelatedNode
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getId() <getIdRelatedNode>`
-    * - :ref:`getTitle() <getTitleRelatedNode>`
-    * - :ref:`getMainPicture() <getMainPictureRelatedNode>`
-    * - :ref:`getRelationType() <getRelationType>`
+    * - :ref:`get_id() <getIdRelatedNode>`
+    * - :ref:`get_title() <getTitleRelatedNode>`
+    * - :ref:`get_main_picture() <getMainPictureRelatedNode>`
+    * - :ref:`get_relation_type() <get_relation_type>`
 
 **Parameters:**
     - id (`int <https://docs.python.org/3/library/functions.html#int>`_) - ID of the anime or manga.
@@ -731,7 +731,7 @@ RelatedNode
 Methods
 ~~~~~~~
 
-.. method:: getId()
+.. method:: get_id()
     :noindex:
 .. _getIdRelatedNode:
 
@@ -740,7 +740,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getTitle()
+.. method:: get_title()
     :noindex:
 .. _getTitleRelatedNode:
 
@@ -749,7 +749,7 @@ Methods
     **Return type:**
         `str <https://docs.python.org/3/library/stdtypes.html#str>`_
 
-.. method:: getMainPicture()
+.. method:: get_main_picture()
     :noindex:
 .. _getMainPictureRelatedNode:
 
@@ -758,7 +758,7 @@ Methods
     **Return type:**
         :ref:`Picture <picture>`
 
-.. method:: getRelationType()
+.. method:: get_relation_type()
 .. _getRelationType:
 
     Anime or manga relation type.
@@ -777,8 +777,8 @@ Season
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getYear() <getYear>`
-    * - :ref:`getSeason() <getSeason>`
+    * - :ref:`get_year() <get_year>`
+    * - :ref:`get_season() <get_season>`
 
 
 **Parameters:**
@@ -788,7 +788,7 @@ Season
 Methods
 ~~~~~~~
 
-.. method:: getYear()
+.. method:: get_year()
 .. _getYear:
 
     Year of season.
@@ -796,7 +796,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getSeason()
+.. method:: get_season()
 .. _getSeason:
 
     Season name.
@@ -816,7 +816,7 @@ Statistics
 
     * - Methods
     * - :ref:`getNumUserLis() <getNumUserLis>`
-    * - :ref:`getStatus() <getStatusStatistics>`
+    * - :ref:`get_status() <getStatusStatistics>`
 
 
 **Parameters:**
@@ -834,7 +834,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getStatus()
+.. method:: get_status()
     :noindex:
 .. _getStatusStatistics:
 
@@ -854,11 +854,11 @@ StatisticsStatus
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getNumWatching() <getNumWatching>`
-    * - :ref:`getNumCompleted() <getNumCompleted>`
-    * - :ref:`getNumOnHold() <getNumOnHold>`
-    * - :ref:`getNumDropped() <getNumDropped>`
-    * - :ref:`getNumPlanToWatch() <getNumPlanToWatch>`
+    * - :ref:`get_num_watching() <get_num_watching>`
+    * - :ref:`get_num_completed() <get_num_completed>`
+    * - :ref:`get_num_on_hold() <get_num_on_hold>`
+    * - :ref:`get_num_dropped() <get_num_dropped>`
+    * - :ref:`get_num_plan_to_watch() <get_num_plan_to_watch>`
 
 
 **Parameters:**
@@ -871,7 +871,7 @@ StatisticsStatus
 Methods
 ~~~~~~~
 
-.. method:: getNumWatching()
+.. method:: get_num_watching()
 .. _getNumWatching:
 
     The number of users who are watching the anime.
@@ -879,7 +879,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getNumCompleted()
+.. method:: get_num_completed()
 .. _getNumCompleted:
 
     The number of users who are completed the anime.
@@ -887,7 +887,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getNumOnHold()
+.. method:: get_num_on_hold()
 .. _getNumOnHold:
 
     The number of users who are waiting for the anime.
@@ -896,7 +896,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getNumDropped()
+.. method:: get_num_dropped()
 .. _getNumDropped:
 
     The number of users who are dropped the anime.
@@ -904,7 +904,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getNumPlanToWatch()
+.. method:: get_num_plan_to_watch()
 .. _getNumPlanToWatch:
 
     The number of users who plan to watch the anime.
@@ -923,8 +923,8 @@ Studio
     :header-rows: 1
 
     * - Methods
-    * - :ref:`getId() <getIdStudio>`
-    * - :ref:`getName() <getNameStudio>`
+    * - :ref:`get_id() <getIdStudio>`
+    * - :ref:`get_name() <getNameStudio>`
 
 
 **Parameters:**
@@ -934,7 +934,7 @@ Studio
 Methods
 ~~~~~~~
 
-.. method:: getId()
+.. method:: get_id()
     :noindex:
 .. _getIdStudio:
 
@@ -943,7 +943,7 @@ Methods
     **Return type:**
         `int <https://docs.python.org/3/library/functions.html#int>`_
 
-.. method:: getName()
+.. method:: get_name()
     :noindex:
 .. _getNameStudio:
 
@@ -1092,8 +1092,8 @@ FieldsEnum
 .. note:: 
     The keys ``pictures``, ``background``, ``related_anime``, ``related_manga``, 
     ``recommendations``, and ``statistics`` cannot be in the **fields** parameter of
-    :ref:`getAnimeList() <getAnimeList>`, :ref:`getAnimeListInDict() <getAnimeListInDict>` and 
-    :ref:`getAnimeListInJSON() <getAnimeListInJSON>` methods.
+    :ref:`get_anime_list() <getAnimeList>`, :ref:`get_anime_list_in_dict() <getAnimeListInDict>` and 
+    :ref:`get_anime_list_in_json() <getAnimeListInJSON>` methods.
 
 
 MediaTypeEnum

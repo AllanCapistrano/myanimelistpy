@@ -3,7 +3,7 @@ Anime List
 
 The sections below will show you how to get the anime list using different methods.
 
-``getAnimeList()``
+``get_anime_list()``
 ++++++++++++++++++
 
 Basic example
@@ -19,15 +19,15 @@ Basic example
     if __name__ == "__main__":
         my_anime_list = MyAnimeList(client_id=CLIENT_ID)
 
-        anime_list = my_anime_list.getAnimeList(
+        anime_list = my_anime_list.get_anime_list(
             anime_name = "Hunter x Hunter",
             limit      = 2
         )
 
         for anime in anime_list:
-            print(f"Id: {anime.getId()}")
-            print(f"Title: {anime.getTitle()}")
-            print(f"Main Picture (medium): {anime.getMainPicture().getMedium()}\n")
+            print(f"Id: {anime.get_id()}")
+            print(f"Title: {anime.get_title()}")
+            print(f"Main Picture (medium): {anime.get_main_picture().get_medium()}\n")
 
 .. admonition:: Output
 
@@ -54,18 +54,18 @@ Request with fields
     if __name__ == "__main__":
         my_anime_list = MyAnimeList(client_id=CLIENT_ID)
 
-        anime_list = my_anime_list.getAnimeList(
+        anime_list = my_anime_list.get_anime_list(
             anime_name = "Hunter x Hunter",
             limit      = 2,
             fields     = ["rank", "status"]
         )
 
         for anime in anime_list:
-            print(f"Id: {anime.getId()}")
-            print(f"Title: {anime.getTitle()}")
-            print(f"Main Picture (medium): {anime.getMainPicture().getMedium()}")
-            print(f"Rank: {anime.getRank()}")
-            print(f"Status: {anime.getStatus()}\n")
+            print(f"Id: {anime.get_id()}")
+            print(f"Title: {anime.get_title()}")
+            print(f"Main Picture (medium): {anime.get_main_picture().get_medium()}")
+            print(f"Rank: {anime.get_rank()}")
+            print(f"Status: {anime.get_status()}\n")
 
 .. admonition:: Output
 
@@ -105,23 +105,23 @@ Request with fields
         if __name__ == "__main__":
             my_anime_list = MyAnimeList(client_id=CLIENT_ID)
 
-            anime_list = my_anime_list.getAnimeList(
+            anime_list = my_anime_list.get_anime_list(
                 anime_name = "Hunter x Hunter",
                 limit      = 2,
                 fields     = ["rank", "status"]
             )
 
             for anime in anime_list:
-                print(f"Id: {anime.getId()}")
-                print(f"Title: {anime.getTitle()}")
-                print(f"Main Picture (medium): {anime.getMainPicture().getMedium()}")
-                print(f"Rank: {anime.getRank()}")
-                print(f"Status: {anime.getStatus()}\n")
+                print(f"Id: {anime.get_id()}")
+                print(f"Title: {anime.get_title()}")
+                print(f"Main Picture (medium): {anime.get_main_picture().get_medium()}")
+                print(f"Rank: {anime.get_rank()}")
+                print(f"Status: {anime.get_status()}\n")
 
     All the next examples will using the `python-dotenv <https://pypi.org/project/python-dotenv/>`_ 
     library, but feel free not to use it if you don't want to.
 
-``getAnimeListInDict()``
+``get_anime_list_in_dict()``
 ++++++++++++++++++++++++
 
 .. code-block:: python3
@@ -139,7 +139,7 @@ Request with fields
     if __name__ == "__main__":
         my_anime_list = MyAnimeList(client_id=CLIENT_ID)
 
-        anime_list = my_anime_list.getAnimeListInDict(
+        anime_list = my_anime_list.get_anime_list_in_dict(
             anime_name = "Hunter x Hunter",
             limit      = 2,
             fields     = ["genres"]
@@ -177,7 +177,7 @@ Request with fields
             Title: Hunter x Hunter
             Genres: [{'id': 1, 'name': 'Action'}, {'id': 2, 'name': 'Adventure'}, {'id': 10, 'name': 'Fantasy'}, {'id': 27, 'name': 'Shounen'}]
 
-``getAnimeListInJSON()``
+``get_anime_list_in_json()``
 ++++++++++++++++++++++++
 
 .. code-block:: python3
@@ -195,7 +195,7 @@ Request with fields
     if __name__ == "__main__":
         my_anime_list = MyAnimeList(client_id=CLIENT_ID)
 
-        anime_list = my_anime_list.getAnimeListInJSON(
+        anime_list = my_anime_list.get_anime_list_in_json(
             anime_name = "Hunter x Hunter",
             limit      = 2,
             fields     = ["num_episodes"]

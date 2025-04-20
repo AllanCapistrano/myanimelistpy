@@ -1,4 +1,3 @@
-
 class Genre:
     def __init__(self, id: int, name: str) -> None:
         """ Constructor
@@ -14,7 +13,7 @@ class Genre:
         self.__id   = id
         self.__name = name
 
-    def getId(self) -> int:
+    def get_id(self) -> int:
         """ Genre ID.
 
         Returns
@@ -24,7 +23,7 @@ class Genre:
 
         return self.__id
 
-    def getName(self) -> str:
+    def get_name(self) -> str:
         """ Genre name.
 
         Returns
